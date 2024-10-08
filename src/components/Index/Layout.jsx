@@ -1,10 +1,16 @@
-import React from 'react'
+import { Outlet, Link } from 'react-router-dom'
+import Navbar from './Navbar'
+import Footer from './Footer'
 
 const Layout = () => {
 	return (
 		<div>
-			
-		</div>
+	        <Navbar />
+		        <div className="max-w-7xl mx-auto mt-24">
+		          <Outlet />
+		        </div>
+	        <LandingFooter />
+      	</div>
 	)
 }
 
