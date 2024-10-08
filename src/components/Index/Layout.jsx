@@ -9,7 +9,7 @@ const Layout = () => {
 		        <div className="max-w-7xl mx-auto mt-24">
 		          <Outlet />
 		        </div>
-	        <LandingFooter />
+	        <Footer />
       	</div>
 	)
 }
