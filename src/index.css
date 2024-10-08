@@ -130,7 +130,7 @@ body {
   }
 
   .search-bar input {
-    @apply h-full w-full rounded-full text-base outline-none focus:border-vibrantGreen bg-white text-gray border border-gray-300 px-5;
+    @apply h-full w-full rounded-full text-base outline-none focus:border-vibrantGreen bg-white text-gray border border-gray px-5;
   }
 
   .navbar-content {
@@ -151,7 +151,7 @@ body {
 
 
   .category-box {
-    @apply w-[98%] md:w-[17rem] lg:w-[20rem] flex flex-col h-48 md:h-52 rounded-xl bg-white shadow-lg shadow-gray-200 p-4;
+    @apply w-[98%] md:w-[17rem] lg:w-[20rem] flex flex-col h-48 md:h-52 rounded-xl bg-white shadow-lg shadow-gray p-4;
   }
 
   .category-box:nth-child(2) {
@@ -204,23 +204,23 @@ body {
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
     transform: translateX(-50%) rotate(180deg);
-    @apply bg-gray dark:bg-gray-600;
+    @apply bg-gray dark:bg-gray;
   }
   .task-input {
-    @apply w-full h-12 bg-transparent border rounded-lg border-gray-300 dark:border-gray outline-none focus:border-vibrantGreen text-sm text-slate-600 dark:text-slate-200 px-3;
+    @apply w-full h-12 bg-transparent border rounded-lg border-gray dark:border-gray outline-none focus:border-vibrantGreen text-sm text-slate-600 dark:text-slate-200 px-3;
   }
 
   .task-label {
-    @apply text-left text-sm dark:text-gray-300 font-semibold;
+    @apply text-left text-sm dark:text-gray font-semibold;
   }
 
   .task-button {
-      @apply w-32 h-10 px-2 py-4 grid place-content-center text-sm text-center bg-gray-300 rounded-lg text-gray-600 outline-none;
+      @apply w-32 h-10 px-2 py-4 grid place-content-center text-sm text-center bg-gray rounded-lg text-gray outline-none;
     }
   
   .category-button {
       flex: 0 0 10rem;
-      @apply h-10 border border-gray px-2 py-4 grid place-content-center text-sm text-center bg-transparent rounded-lg text-gray-600 dark:text-gray outline-none;
+      @apply h-10 border border-gray px-2 py-4 grid place-content-center text-sm text-center bg-transparent rounded-lg text-gray dark:text-gray outline-none;
     }
 
   .category-button.active {
@@ -228,7 +228,7 @@ body {
   }
 
   .task-button.active {
-        @apply border border-[2.7px] border-gray dark:border-gray-300 text-white;
+        @apply border border-[2.7px] border-gray dark:border-gray text-white;
   }
 
   .task-list {
@@ -236,7 +236,7 @@ body {
   }
 
   .task-label-2 {
-    @apply text-sm text-gray-700 dark:text-gray-300 font-semibold;
+    @apply text-sm text-gray dark:text-gray font-semibold;
   }
 
 /*  .task-list:hover {
