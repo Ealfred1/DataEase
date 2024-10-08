@@ -6,7 +6,7 @@ const {
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx,ts,tsx}"], // Merged content paths
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"], // Merged content paths
   darkMode: "class",
   theme: {
     extend: {
@@ -26,33 +26,26 @@ module.exports = {
           },
         },
       },
-      // Extend colors from both configurations
+      // New color palette from the image
       colors: {
-        p1: "#71e60b", // Main primary color
-        p2: "#00a93b", // Darker primary color
-        p3: "#49d793", // Success color
-        p4: "#b7b7b8", // Light gray
-        p5: "#7b7d85", // Mid-gray
-        s1: "#131517", // General background color (dark)
-        s2: "#1c1e20", // Secondary background (e.g., card background)
-        s3: "#2c2e30", // Tertiary background (subcards)
-        s4: "#00a93b", // Dark primary or border accent (similar to 'primary-dark')
-        s5: "#59b9e2", // Info color for accents
-        black: {
-          DEFAULT: "#000000", // Default black color
-          100: "#05091D", // Slightly lighter black
-        },
-        danger: "#e65244", // Danger color for alerts
-        warning: "#fc8802", // Warning color for attention
-        accent: "#a599c6", // Accent color (purple-ish)
+        greenishWhite: "#eff5ee", // Light Greenish White
+        pastelGreen: "#d3e8c7",   // Light Pastel Green
+        beige: "#f3e5c5",         // Light Beige
+        vibrantGreen: "#00c158",  // Vibrant Green
+        softGreen: "#7ad67f",     // Medium Pastel Green
+        offWhite: "#f8f9f8",      // Off-White
+        gray: "#9b9f9d",          // Gray
+        orangeYellow: "#feaa26",  // Bright Yellow-Orange
+        mutedOlive: "#707f64",    // Muted Olive
+        lightGreen: "#8cc98f"     // Soft Green
       },
       // Extend box shadows
       boxShadow: {
-        100: "0px 4px 4px rgba(0, 0, 0, 0.25), 0px 16px 24px rgba(0, 0, 0, 0.25), inset 0px 3px 6px #00a93b", // Updated to match your 's4' dark primary color
-        200: "0px 4px 4px rgba(0, 0, 0, 0.25), 0px 16px 24px rgba(0, 0, 0, 0.25), inset 0px 4px 10px #49d793", // Success color
-        300: "0px 4px 4px rgba(0, 0, 0, 0.25), 0px 16px 24px rgba(0, 0, 0, 0.25), inset 0px 3px 6px #00a93b", // Updated to match 's4'
+        100: "0px 4px 4px rgba(0, 0, 0, 0.25), 0px 16px 24px rgba(0, 0, 0, 0.25), inset 0px 3px 6px #00a93b",
+        200: "0px 4px 4px rgba(0, 0, 0, 0.25), 0px 16px 24px rgba(0, 0, 0, 0.25), inset 0px 4px 10px #49d793",
+        300: "0px 4px 4px rgba(0, 0, 0, 0.25), 0px 16px 24px rgba(0, 0, 0, 0.25), inset 0px 3px 6px #00a93b",
         400: "inset 0px 2px 4px 0 rgba(255, 255, 255, 0.05)",
-        500: "0px 16px 24px rgba(0, 0, 0, 0.25), 0px -14px 48px rgba(40, 51, 111, 0.7)", // Darker shadows for depth
+        500: "0px 16px 24px rgba(0, 0, 0, 0.25), 0px -14px 48px rgba(40, 51, 111, 0.7)",
       },
       // Extend font families
       fontFamily: {
@@ -63,7 +56,7 @@ module.exports = {
       transitionProperty: {
         borderColor: "border-color",
       },
-      // Extend spacing
+      // Extend spacing, z-index, line height, border-radius, and flex properties (remains the same)
       spacing: {
         "1/5": "20%",
         "2/5": "40%",
@@ -88,17 +81,14 @@ module.exports = {
         960: "960px",
         1230: "1230px",
       },
-      // Extend z-index
       zIndex: {
         1: "1",
         2: "2",
         4: "4",
       },
-      // Extend line height
       lineHeight: {
         12: "48px",
       },
-      // Extend border-radius
       borderRadius: {
         14: "14px",
         20: "20px",
@@ -106,7 +96,6 @@ module.exports = {
         half: "50%",
         "7xl": "40px",
       },
-      // Extend flex properties
       flex: {
         50: "0 0 50%",
         320: "1px 0 320px",
@@ -118,7 +107,7 @@ module.exports = {
       },
     },
   },
-  plugins: [addVariablesForColors], // Keep your custom plugin
+  plugins: [addVariablesForColors], // Custom plugin
 };
 
 function addVariablesForColors({ addBase, theme }) {
