@@ -1,10 +1,17 @@
 import { useState } from 'react'
+import { Routes, Route } from 'react-router-dom';
 
 const App = () => {
 
   return (
     <>
-      <h1 className="">Hello world!</h1>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<LandingPage />} />
+          {/*<Route path="/waitlist" element={<WaitlistPage />} />*/}
+          <Route path='/*' element={<NotFound />} />
+        </Route>
+      </Routes>
     </>
   )
 }
