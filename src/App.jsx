@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom';
+import { Layout } from './components'
+import { LandingPage, LoginPage, RegisterPage, NotFound } from './pages'
 
 const App = () => {
 
