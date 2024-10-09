@@ -31,7 +31,7 @@ const Navbar = () => {
     <>
       <MobileNav isOpen={openMenu} toggleMenu={toggleMenu} />
       <nav
-        className={`bg-transparent top-0 z-[999] backdrop-blur-2xl transition-all border border-transparent duration-300 ${
+        className={`bg-transparent top-0 z-[999] backdrop-blur-2xl transition-all border border-transparent duration-500 ${
           isScrolled
             ? 'fixed w-[90%] top-5 py-[3px] shadow-lg rounded-[3rem] border border-[#ddd]'
             : 'sticky w-full top-0 scale-100 py-4'
