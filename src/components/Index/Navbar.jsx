@@ -31,10 +31,10 @@ const Navbar = () => {
     <>
       <MobileNav isOpen={openMenu} toggleMenu={toggleMenu} />
       <nav
-        className={`bg-transparent py-2 top-0 z-[999] backdrop-blur-2xl transition-all duration-300 ${
+        className={`bg-transparent top-0 z-[999] backdrop-blur-2xl transition-all border border-transparent duration-300 ${
           isScrolled
-            ? 'fixed w-[90%] top-5 shadow-lg rounded-2xl'
-            : 'sticky w-full top-0 scale-100'
+            ? 'fixed w-[90%] top-5 py-[3px] shadow-lg rounded-[3rem] border border-[#ddd]'
+            : 'sticky w-full top-0 scale-100 py-4'
         }`}
       >
         <div className="w-full flex items-center justify-between py-4 px-[1rem] md:px-[2rem]">
