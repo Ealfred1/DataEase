@@ -34,7 +34,7 @@ module.exports = {
         vibrantGreen: "#00c158",  // Vibrant Green
         softGreen: "#7ad67f",     // Medium Pastel Green
         offWhite: "#f8f9f8",      // Off-White
-        gray: "#9b9f9d",          // Gray
+        gray: "#7a7a7d",          // Gray
         orangeYellow: "#feaa26",  // Bright Yellow-Orange
         mutedOlive: "#707f64",    // Muted Olive
         lightGreen: "#8cc98f"     // Soft Green
