@@ -5,6 +5,7 @@ import { cn } from "../../lib/utils";
 import { motion } from "framer-motion";
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react'
+import Img from '../../assets/hero.png'
 
 const Hero = () => {
 	const ballRefs = useRef([]);
@@ -83,7 +84,7 @@ const Hero = () => {
 
 	          <div className="absolute -top-32 left-[calc(50%-340px)] w-[1230px] pointer-events-none hero-img_res">
 	            <img
-	              src="/vite.svg"
+	              src={Img}
 	              className="size-1230 scale-[0.534]  max-lg:h-auto"
 	              alt="hero"
 	            />
