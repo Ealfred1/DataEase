@@ -63,7 +63,7 @@ const Navbar = () => {
           </ul>
 
           <div className="flex gap-2 lg:hidden">
-            <button className="menu-btn2 bg-lightGreen block">Sign In</button>
+            <button className="w-[8rem] h-[2.8rem] text-[14px] flex items-center justify-center border border-gray text-[#333] rounded-3xl cursor-pointer transition-all duration-300 hover:scale-[1.04]">Sign In</button>
             <button className="menu-btn" onClick={toggleMenu}>
               <span className={`pi ${openMenu ? 'pi-times' : 'pi-bars'} text-[1rem]`}></span>
             </button>
