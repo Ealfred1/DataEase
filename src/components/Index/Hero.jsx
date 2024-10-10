@@ -85,7 +85,7 @@ const Hero = () => {
 	          <div className="absolute -top-32 left-[calc(50%-340px)] w-[1230px] pointer-events-none hero-img_res">
 	            <img
 	              src={Img}
-	              className="size-1230 scale-[0.534]  max-lg:h-auto"
+	              className="size-1230 scale-[0.534]  max-lg:h-auto object-cover"
 	              alt="hero"
 	            />
 	          </div>
