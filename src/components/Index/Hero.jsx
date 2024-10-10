@@ -61,13 +61,17 @@ const Hero = () => {
 	        <div className="container">
 	          <div className="relative z-2 max-w-512 max-lg:max-w-388">
 	            <div className="caption small-2 uppercase text-orangeYellow">
-	              Empowering Creators & Businesses
+	                   Simplifying VTU for Everyone
+
 	            </div>
 	            <h1 className="mb-6 h1 text-vibrantGreen uppercase max-lg:mb-7 max-lg:h2 max-md:mb-4 max-md:text-5xl max-md:leading-12">
-	              Thriving Online Made Easy
+	                  VTU Made Easy
+
 	            </h1>
 	            <p className="max-w-440 mb-14 body-2 max-md:mb-10 text-gray">
-	              Thrivr empowers entrepreneurs with customized storefronts, essential tools, and seamless workflows, enabling limitless growth potential.
+				        DataEase provides quick and reliable VTU services, including airtime, data, and bill payments, for individuals and businesses.
+
+
 	            </p>
 	            <LinkScroll to="features" offset={-100} spy smooth>
 	              <button className="inline-flex h-16 animate-shimmer items-center justify-center rounded-2xl border-none bg-[linear-gradient(110deg,#00c158,45%,#7ad67f,55%,#00c158)] bg-[length:200%_100%] px-16 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-50">
