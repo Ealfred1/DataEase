@@ -49,7 +49,7 @@ const Hero = () => {
 	            <h1 className="mb-6 h1 text-vibrantGreen uppercase max-lg:mb-7 max-lg:h2 max-md:mb-4 max-md:text-5xl max-md:leading-12">
 	              Thriving Online Made Easy
 	            </h1>
-	            <p className="max-w-440 mb-14 body-1 max-md:mb-10">
+	            <p className="max-w-440 mb-14 body-2 max-md:mb-10 text-gray">
 	              Thrivr empowers entrepreneurs with customized storefronts, essential tools, and seamless workflows, enabling limitless growth potential.
 	            </p>
 	            <LinkScroll to="features" offset={-100} spy smooth>
