@@ -33,8 +33,8 @@ const Navbar = () => {
       <nav
         className={`bg-transparent top-0 z-[999] backdrop-blur-2xl transition-all border border-transparent duration-500 ${
           isScrolled
-            ? 'fixed w-[90%] top-5 py-[3px] shadow-lg rounded-[3rem] border border-[#ddd]'
-            : 'sticky w-full top-0 scale-100 py-4'
+            ? 'lg:fixed lg:w-[90%] lg:top-5 lg:py-[3px] lg:shadow-lg lg:rounded-[3rem] lg:border lg:border-[#ddd]'
+            : 'lg:sticky lg:w-full lg:top-0 lg:scale-100 lg:py-4'
         }`}
       >
         <div className="w-full flex items-center justify-between py-4 px-[1rem] md:px-[2rem]">
