@@ -40,6 +40,23 @@ const Hero = () => {
 
 	return (
 		<section className="relative pt-60 pb-40 max-lg:pt-52 max-lg:pb-36 max-md:pt-36 max-md:pb-32 mb-[200rem]">
+		{/* Background 3D balls */} 
+        <div className="scale-[0.7]   lg:scale-[0.9] absolute inset-0 -z-10">
+          <div  
+            ref={(el) => (ballRefs.current[0] = el)} 
+            className="scale-[0.7] absolute top-8 left-12 w-[2.2rem] h-[2.2rem] bg-gradient-to-r from-beige to-gray rounded-full shadow-[0_4px_8px_rgba(0,0,0,0.3),_inset_0_0_10px_rgba(255,255,255,0.2)]">
+          </div>
+          <div 
+            ref={(el) => (ballRefs.current[1] = el)} 
+            className="scale-[0.9] absolute top-28 right-16 w-[3rem] h-[3rem] bg-gradient-to-b from-yellow-400 to-orange-500 rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.4),_inset_0_0_12px_rgba(255,255,255,0.2)]">
+          </div>
+          <div 
+            ref={(el) => (ballRefs.current[2] = el)} 
+            className="scale-[0.9] absolute top-[13%] left-1/3 w-[4.5rem] 	h-[4.5rem] bg-gradient-to-r from-black to-teal-500 rounded-full shadow-[0_4px_12px_rgba(0,0,0,0.3),_inset_0_0_10px_rgba(255,255,255,0.2)]">
+          </div>
+          
+     
+        </div>
 	      <Element name="hero">
 	        <div className="container">
 	          <div className="relative z-2 max-w-512 max-lg:max-w-388">

@@ -4,13 +4,15 @@ import Footer from './Footer'
 
 const Layout = () => {
 	return (
-		<div className="max-w-[75rem] mx-auto">
+		<section className="bg-grid">
+			<div className="max-w-[75rem] mx-auto">
 	        <Navbar />
-		        <div className="max-w-7xl mx-auto">
+		        <div className="max-w-9xl mx-auto ">
 		          <Outlet />
 		        </div>
 	        <Footer />
       	</div>
+		</section>
 	)
 }
 
