@@ -52,6 +52,12 @@ opacity: 1;
 transform: translateX(0);
 }
 
+.bg-grid {
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+  linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px; /* Customize grid size */
+}
+
  .box-stat {
   @apply w-[45%] md:w-[45%] lg:w-[17rem] flex flex-col h-32 md:h-44 rounded-xl p-4 flex;
   background-image: linear-gradient(320deg, #8083ff 50%, #4E90EF);
