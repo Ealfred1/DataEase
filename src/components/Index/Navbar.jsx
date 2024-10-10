@@ -80,7 +80,7 @@ const Navbar = () => {
       </nav>
 
       <div className="px-4 w-full flex items-center justify-center">
-        <div className="bg-grey bg-opacity-40 w-[78%] h-[0.2px] px-2" />
+        <div className="bg-gray bg-opacity-40 w-[78%] h-[0.2px] px-2" />
       </div>
     </>
   )
