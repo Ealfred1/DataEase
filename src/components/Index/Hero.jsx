@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { BackgroundBeams } from "../ui/background-beams";
+import { Element, Link as LinkScroll } from "react-scroll";
 import { cn } from "../../lib/utils";
 import { motion } from "framer-motion";
 import { gsap } from 'gsap';
@@ -25,7 +26,7 @@ const Hero = () => {
 	      });
 	    });
   	};
-  	
+
 
 	  useEffect(() => {
 	    // Add mousemove listener to the window
