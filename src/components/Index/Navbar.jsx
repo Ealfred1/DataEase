@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import MobileNav from './MobileNav'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false)
@@ -63,17 +64,17 @@ const Navbar = () => {
           </ul>
 
           <div className="flex gap-2 lg:hidden">
-            <button className="w-[8rem] h-[2.8rem] text-[14px] flex items-center justify-center border border-gray text-[#333] rounded-3xl cursor-pointer transition-all duration-300 hover:scale-[1.04]">Sign In</button>
+            <Link to="/login" className="w-[8rem] h-[2.8rem] text-[14px] flex items-center justify-center border border-gray text-[#333] rounded-3xl cursor-pointer transition-all duration-300 hover:scale-[1.04]">Sign In</Link>
             <button className="menu-btn" onClick={toggleMenu}>
               <span className={`pi ${openMenu ? 'pi-times' : 'pi-bars'} text-[1rem]`}></span>
             </button>
           </div>
 
           <div className="hidden lg:flex items-center gap-2">
-            <button className="w-[8rem] h-[2.8rem] text-[14px] flex items-center justify-center border border-gray text-[#333] rounded-xl cursor-pointer transition-all duration-300 hover:scale-[1.04]">
+            <Link to="/login" className="w-[8rem] h-[2.8rem] text-[14px] flex items-center justify-center border border-gray text-[#333] rounded-xl cursor-pointer transition-all duration-300 hover:scale-[1.04]">
               Login
-            </button>
-            <button className="menu-btn2 bg-vibrantGreen block">Sign Up</button>
+            </Link>
+            <Link to="/register" className="menu-btn2 bg-vibrantGreen block">Sign Up</Link>
           </div>
         </div>
       </nav>
