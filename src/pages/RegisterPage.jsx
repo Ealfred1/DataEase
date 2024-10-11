@@ -80,24 +80,26 @@ const RegisterPage = () => {
                     />
                    </div>
                    <div className="grid gap-2">
+                   <Label htmlFor="username" className="small-1 text-gray font-semibold text-[16px]">Username</Label>
                     <input
                       id="username"
                       type="text"
                       value={userData.username}
                       onChange={handleChange}
                       className="task-input"
-                      placeholder="Username"
+                      placeholder="Sterling"
                       required
                     />
                    </div>
                    <div className="grid gap-2">
+                   <Label htmlFor="phone" className="small-1 text-gray font-semibold text-[16px]">Phone Number</Label>
                     <input
                       id="phone_number"
                       type="tel"
                       value={userData.phone_number}
                       onChange={handleChange}
                       className="task-input"
-                      placeholder="Phone Number"
+                      placeholder="09132347584"
                       required
                     />
                    </div>
