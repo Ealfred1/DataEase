@@ -33,7 +33,7 @@ const RegisterPage = () => {
       email: userData.email,
       username: userData.username,
       password: userData.password,
-      is_active: true,
+      is_active: false,
     });
   };
 

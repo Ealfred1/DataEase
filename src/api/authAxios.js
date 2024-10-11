@@ -1,15 +1,15 @@
 import axios from 'axios';
 
 const authAxios = axios.create({
-  baseURL: 'https://vtu-h5yu.onrender.com/api', // Change this to your base URL
+  baseURL: 'https://vtu-h5yu.onrender.com/api',
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
-// Add an interceptor to include the Bearer token
+// Interceptor to include Bearer token for authenticated requests
 authAxios.interceptors.request.use((config) => {
-  const token = localStorage.getItem('token'); // Assume token is stored in localStorage
+  const token = localStorage.getItem('accessToken');
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
