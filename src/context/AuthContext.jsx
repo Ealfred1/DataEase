@@ -1,7 +1,8 @@
-import { createContext, useState } from 'react'
-import axiosInstance from '../api/axios'
-import authAxios from '../api/authAxios'
-import { useNavigate } from 'react-router-dom'
+import { createContext, useState } from 'react';
+import axiosInstance from '../api/axios';
+import authAxios from '../api/authAxios';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 export const AuthContext = createContext();
 
@@ -16,10 +17,10 @@ export const AuthProvider = ({ children }) => {
     try {
       const response = await axiosInstance.post('/users/register', userData);
       setUser(response.data);
-      // After registration, OTP is sent automatically, set flag
       setOtpSent(true);
+      toast.success('Registration successful! OTP sent to your email.');
     } catch (error) {
-      console.error('Registration error:', error.response.data);
+      toast.error(error.response?.data?.message || 'Registration failed');
     }
   };
 
@@ -27,21 +28,36 @@ export const AuthProvider = ({ children }) => {
   const resendOtp = async (email) => {
     try {
       await axiosInstance.post('/users/resend-otp', { email });
+      toast.success('OTP resent to your email.');
     } catch (error) {
-      console.error('Resend OTP error:', error.response.data);
+      toast.error(error.response?.data?.message || 'Failed to resend OTP.');
     }
   };
 
-  // Verify OTP
+  // Verify OTP and log in user
   const verifyOtp = async (email, otp) => {
     try {
       const response = await axiosInstance.post('/users/verify-otp', { email, otp });
-      setOtpVerified(true);
       setUser(response.data);
-      localStorage.setItem('token', response.data.token); // Save token for authenticated requests
-      navigate('/dashboard'); // Navigate to dashboard or any page after verification
+      setOtpVerified(true);
+
+      // After OTP verification, automatically log the user in
+      await loginUser(response.data.username, response.data.password);
     } catch (error) {
-      console.error('OTP verification error:', error.response.data);
+      toast.error(error.response?.data?.message || 'OTP verification failed.');
+    }
+  };
+
+  // Log in user (JWT Authentication)
+  const loginUser = async (username, password) => {
+    try {
+      const { data } = await axiosInstance.post('/users/auth/jwt/create/', { username, password });
+      localStorage.setItem('accessToken', data.access);
+      localStorage.setItem('refreshToken', data.refresh);
+      toast.success('Login successful! Redirecting to dashboard...');
+      navigate('/dashboard'); // Redirect after successful login
+    } catch (error) {
+      toast.error(error.response?.data?.message || 'Login failed.');
     }
   };
 
@@ -54,6 +70,7 @@ export const AuthProvider = ({ children }) => {
         register,
         resendOtp,
         verifyOtp,
+        loginUser,
       }}
     >
       {children}
