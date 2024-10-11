@@ -44,14 +44,15 @@ const LoginPage = () => {
 	            <div className="grid gap-2">
 	              <div className="flex items-center">
 	                <Label htmlFor="password" className="small-1 text-gray font-semibold text-[16px]">Password</Label>
-	                <Link
+	              </div>
+	              <input id="password" className="task-input" type="password" placeholder="helloDataEase@1>" required />
+
+	              <Link
 	                  href="/forgot-password"
 	                  className="ml-auto inline-block text-sm underline text-lightGreen"
 	                >
 	                  Forgot your password?
 	                </Link>
-	              </div>
-	              <input id="password" className="task-input" type="password" placeholder="helloDataEase@1>" required />
 	            </div>
 	            <Button type="submit" className="inline-flex h-16 animate-shimmer items-center justify-center rounded-2xl border-none bg-[linear-gradient(110deg,#00c158,45%,#7ad67f,55%,#00c158)] body-2 bg-[length:200%_100%] px-16 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-50">
 	              Login
