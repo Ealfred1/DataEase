@@ -6,6 +6,11 @@ import animationData from '../assets/Animation - 1728603847074.json';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+
 const RegisterPage = () => {
   const { register, otpSent, verifyOtp } = useContext(AuthContext);
   const [userData, setUserData] = useState({
@@ -63,15 +68,18 @@ const RegisterPage = () => {
                 <>
                   {/* Registration Form */}
                   <div className="grid gap-2">
+                  	<Label htmlFor="full-name" className="small-1 text-gray font-semibold text-[16px]">Full Name</Label>
                     <input
                       id="full_name"
                       type="text"
                       value={userData.full_name}
                       onChange={handleChange}
                       className="task-input"
-                      placeholder="Full Name"
+                      placeholder="Sam Smither"
                       required
                     />
+                   </div>
+                   <div className="grid gap-2">
                     <input
                       id="username"
                       type="text"
@@ -81,6 +89,8 @@ const RegisterPage = () => {
                       placeholder="Username"
                       required
                     />
+                   </div>
+                   <div className="grid gap-2">
                     <input
                       id="phone_number"
                       type="tel"
@@ -90,6 +100,8 @@ const RegisterPage = () => {
                       placeholder="Phone Number"
                       required
                     />
+                   </div>
+                   <div className="grid gap-2">
                     <input
                       id="email"
                       type="email"
@@ -99,6 +111,9 @@ const RegisterPage = () => {
                       placeholder="Email"
                       required
                     />
+                   </div>
+
+                   <div className="grid gap-2">
                     <input
                       id="password"
                       type="password"
@@ -108,8 +123,8 @@ const RegisterPage = () => {
                       placeholder="Password"
                       required
                     />
-                  </div>
-                  <button onClick={handleRegister} className="btn-primary">
+                   </div>
+                  <button onClick={handleRegister} className="inline-flex h-16 animate-shimmer items-center justify-center rounded-2xl border-none bg-[linear-gradient(110deg,#00c158,45%,#7ad67f,55%,#00c158)] body-2 bg-[length:200%_100%] px-16 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-50">
                     Sign Up
                   </button>
                 </>
