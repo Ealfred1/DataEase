@@ -56,7 +56,7 @@ const RegisterPage = () => {
 	              <Label htmlFor="phone" className="small-1 text-gray font-semibold text-[16px]">Phone Number</Label>
 	              <input
 	                id="phone"
-	                type="text"
+	                type="tel"
 	                className="task-input"
 	                placeholder="09132347584"
 	                required
