@@ -3,6 +3,8 @@ import { AuthContext } from '../context/AuthContext';
 import { Link } from 'react-router-dom';
 import Lottie from 'lottie-react';
 import animationData from '../assets/Animation - 1728603847074.json';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const RegisterPage = () => {
   const { register, otpSent, verifyOtp } = useContext(AuthContext);
@@ -62,7 +64,7 @@ const RegisterPage = () => {
                   {/* Registration Form */}
                   <div className="grid gap-2">
                     <input
-                      id="full-name"
+                      id="full_name"
                       type="text"
                       value={userData.full_name}
                       onChange={handleChange}
