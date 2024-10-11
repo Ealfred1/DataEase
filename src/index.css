@@ -517,7 +517,7 @@ transform: translateX(0);
   }
 
   .small-1 {
-    @apply text-[14px] font-semibold leading-[18px] tracking-[0.03em];
+    @apply text-[14px] leading-[18px] tracking-[0.03em];
   }
 
   .small-2 {
