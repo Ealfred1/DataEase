@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 
 import { Button } from "@/components/ui/button"
@@ -9,7 +9,17 @@ import animationData from '../assets/Animation - 1728603847074.json'
 
 const LoginPage = () => {
 	const animationRef = useRef(null);
+	const [password, setPassword] = useState('')
+	const [showPassword, setShowPassword] = useState(false)
 
+	const togglePasswordVisibility = () => {
+	    setShowPassword(!showPassword)
+	 }
+
+	 const handlePasswordChange = async (e) => {
+    		setPassword(e.target.value)
+  	}
+  
 	return (
 		<div className="w-full lg:grid lg:min-h-[600px] lg:grid-cols-2 xl:min-h-[800px]">
 		<div className="hidden bg-transparent lg:block">
@@ -45,7 +55,11 @@ const LoginPage = () => {
 	              <div className="flex items-center">
 	                <Label htmlFor="password" className="small-1 text-gray font-semibold text-[16px]">Password</Label>
 	              </div>
-	              <input id="password" className="task-input" type="password" placeholder="helloDataEase@1>" required />
+	              {/*<i className="pi pi-eye" className=" text-gray"></i>*/}
+   	         <input type={showPassword ? 'text' : 'password'}  id="password" value={password} className="task-input" onChange={handlePasswordChange} required />
+            {/*{ password.length > 0 &&
+              ( <i className={showPassword ? "pi pi-eye" : "pi pi-eye-slash"} className=" text-gray" onClick={togglePasswordVisibility}></i> )
+            }*/}
 
 	              <Link
 	                  href="/forgot-password"
