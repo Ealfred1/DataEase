@@ -104,13 +104,14 @@ const RegisterPage = () => {
                     />
                    </div>
                    <div className="grid gap-2">
+                   <Label htmlFor="email" className="small-1 text-gray font-semibold text-[16px]">Email</Label>
                     <input
                       id="email"
                       type="email"
                       value={userData.email}
                       onChange={handleChange}
                       className="task-input"
-                      placeholder="Email"
+                      placeholder="email@example.com"
                       required
                     />
                    </div>
