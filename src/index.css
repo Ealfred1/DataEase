@@ -481,7 +481,7 @@ transform: translateX(0);
   }
 
   .h4 {
-    @apply text-[40px] font-semibold leading-[52px];
+    @apply text-[36px] font-semibold leading-[52px];
   }
 
   .h5 {

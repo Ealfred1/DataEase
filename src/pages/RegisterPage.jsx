@@ -25,15 +25,35 @@ const RegisterPage = () => {
 	      </div>
 	      <div className="flex items-center justify-center py-12">
 	        <div className="mx-auto grid w-[350px] gap-6">
-	          <div className="grid gap-2 text-center">
-	            <h1 className="h3 text-[54px] font-bold text-vibrantGreen new relative mb-3">Sign In</h1>
+	          <div className="grid gap-2 text-left">
+	            <h1 className="h4 font-bold text-vibrantGreen relative mb-3">Create an Account</h1>
 	            <p className="text-gray small-1">
-	              Enter your credentials to Login to your account
+	              Create an account and explore VTU offers and rewards
 	            </p>
 	          </div>
 	          <div className="grid gap-4">
 	            <div className="grid gap-2">
-	              <Label htmlFor="email" className="small-1 text-gray font-semibold text-[16px]">Email / Username</Label>
+	              <Label htmlFor="full-name" className="small-1 text-gray font-semibold text-[16px]">Full Name</Label>
+	              <input
+	                id="full-name"
+	                type="text"
+	                className="task-input"
+	                placeholder="Sam Smither"
+	                required
+	              />
+	            </div>
+	            <div className="grid gap-2">
+	              <Label htmlFor="username" className="small-1 text-gray font-semibold text-[16px]">Username</Label>
+	              <input
+	                id="username"
+	                type="text"
+	                className="task-input"
+	                placeholder="Sam Smither"
+	                required
+	              />
+	            </div>
+	            <div className="grid gap-2">
+	              <Label htmlFor="email" className="small-1 text-gray font-semibold text-[16px]">Email</Label>
 	              <input
 	                id="email"
 	                type="email"
