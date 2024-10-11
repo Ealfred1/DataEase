@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }) => {
   // Register user
   const register = async (userData) => {
     try {
-      const response = await axiosInstance.post('/users/register', userData);
+      const response = await axiosInstance.post('/users/register/', userData);
       setUser(response.data);
       setOtpSent(true);
       toast.success('Registration successful! OTP sent to your email.');
@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }) => {
   // Resend OTP
   const resendOtp = async (email) => {
     try {
-      await axiosInstance.post('/users/resend-otp', { email });
+      await axiosInstance.post('/users/resend-otp/', { email });
       toast.success('OTP resent to your email.');
     } catch (error) {
       toast.error(error.response?.data?.message || 'Failed to resend OTP.');
@@ -37,7 +37,7 @@ export const AuthProvider = ({ children }) => {
   // Verify OTP and log in user
   const verifyOtp = async (email, otp) => {
     try {
-      const response = await axiosInstance.post('/users/verify-otp', { email, otp });
+      const response = await axiosInstance.post('/users/verify-otp/', { email, otp });
       setUser(response.data);
       setOtpVerified(true);
 
