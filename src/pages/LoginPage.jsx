@@ -24,44 +24,42 @@ const LoginPage = () => {
 	      </div>
 	      <div className="flex items-center justify-center py-12">
 	        <div className="mx-auto grid w-[350px] gap-6">
-	          <div className="grid gap-2 text-left">
-	            <h1 className="h3 text-[54px] font-bold text-vibrantGreen">Sign In</h1>
+	          <div className="grid gap-2 text-center">
+	            <h1 className="h3 text-[54px] font-bold text-vibrantGreen new relative mb-3">Sign In</h1>
 	            <p className="text-gray small-1">
 	              Enter your credentials to Login to your account
 	            </p>
 	          </div>
 	          <div className="grid gap-4">
 	            <div className="grid gap-2">
-	              <Label htmlFor="email">Email</Label>
-	              <Input
+	              <Label htmlFor="email" className="small-1 text-gray font-semibold text-[16px]">Email / Username</Label>
+	              <input
 	                id="email"
 	                type="email"
-	                placeholder="m@example.com"
+	                className="task-input"
+	                placeholder="email@example.com"
 	                required
 	              />
 	            </div>
 	            <div className="grid gap-2">
 	              <div className="flex items-center">
-	                <Label htmlFor="password">Password</Label>
+	                <Label htmlFor="password" className="small-1 text-gray font-semibold text-[16px]">Password</Label>
 	                <Link
 	                  href="/forgot-password"
-	                  className="ml-auto inline-block text-sm underline"
+	                  className="ml-auto inline-block text-sm underline text-lightGreen"
 	                >
 	                  Forgot your password?
 	                </Link>
 	              </div>
-	              <Input id="password" type="password" required />
+	              <input id="password" className="task-input" type="password" placeholder="helloDataEase@1>" required />
 	            </div>
-	            <Button type="submit" className="w-full">
+	            <Button type="submit" className="inline-flex h-16 animate-shimmer items-center justify-center rounded-2xl border-none bg-[linear-gradient(110deg,#00c158,45%,#7ad67f,55%,#00c158)] body-2 bg-[length:200%_100%] px-16 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-50">
 	              Login
 	            </Button>
-	            <Button variant="outline" className="w-full">
-	              Login with Google
-	            </Button>
 	          </div>
-	          <div className="mt-4 text-center text-sm">
+	          <div className="mt-4 text-center text-sm text-green-900">
 	            Don&apos;t have an account?{" "}
-	            <Link href="#" className="underline">
+	            <Link to="/register" className="underline">
 	              Sign up
 	            </Link>
 	          </div>
