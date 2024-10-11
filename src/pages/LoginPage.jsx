@@ -27,7 +27,7 @@ const LoginPage = () => {
 	          <div className="grid gap-2 text-left">
 	            <h1 className="h3 text-[54px] font-bold text-vibrantGreen">Sign In</h1>
 	            <p className="text-gray small-1">
-	              Enter your email below to login to your account
+	              Enter your credentials to Login to your account
 	            </p>
 	          </div>
 	          <div className="grid gap-4">
