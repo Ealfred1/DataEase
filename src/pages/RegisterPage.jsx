@@ -79,18 +79,17 @@ const RegisterPage = () => {
 	              <input id="password" className="task-input" type="password" placeholder="helloDataEase@1>" required />
 	            </div>
 
-	            <Link
-	                  href="/forgot-password"
-	                  className="ml-auto inline-block text-sm underline text-lightGreen"
+	            <Label
+	                  className="ml-auto inline-block text-sm leading-6 text-gray"
 	                >
-	                  Forgot your password?
-	                </Link>
+	                  By registering, I agree to DataEase's <span className="font-bold text-black">Terms of Service</span> and <span className="font-bold text-black">Privacy policy</span>
+	                </Label>
 	            <Button type="submit" className="inline-flex h-16 animate-shimmer items-center justify-center rounded-2xl border-none bg-[linear-gradient(110deg,#00c158,45%,#7ad67f,55%,#00c158)] body-2 bg-[length:200%_100%] px-16 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-50">
 	              Login
 	            </Button>
 	          </div>
 	          <div className="mt-4 text-center text-sm text-green-900">
-	            Don&apos;t have an account?{" "}
+	            Already have an account?{" "}
 	            <Link to="/register" className="underline">
 	              Sign up
 	            </Link>
