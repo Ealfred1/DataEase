@@ -48,7 +48,17 @@ const RegisterPage = () => {
 	                id="username"
 	                type="text"
 	                className="task-input"
-	                placeholder="Sam Smither"
+	                placeholder="Sterling"
+	                required
+	              />
+	            </div>
+	            <div className="grid gap-2">
+	              <Label htmlFor="phone" className="small-1 text-gray font-semibold text-[16px]">Phone Number</Label>
+	              <input
+	                id="phone"
+	                type="text"
+	                className="task-input"
+	                placeholder="09132347584"
 	                required
 	              />
 	            </div>
