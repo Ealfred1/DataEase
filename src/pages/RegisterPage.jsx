@@ -104,7 +104,7 @@ const RegisterPage = () => {
               </p>
             </div>
             <div className="grid gap-4">
-              {otpSent ? (
+              {!otpSent ? (
                 <>
                   {/* Registration Form */}
                   <div className="grid gap-2">
