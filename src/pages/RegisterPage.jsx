@@ -30,7 +30,12 @@ const RegisterPage = () => {
   const [verifying, setVerifying] = useState(false);
   const [countdown, setCountdown] = useState(60);
   const [resendEnabled, setResendEnabled] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+  
   // Handle changes in input fields
   const handleChange = (e) => {
     setUserData({
@@ -150,7 +155,7 @@ const RegisterPage = () => {
                       required
                     />
                   </div>
-
+{/*
                   <div className="grid gap-2">
                     <Label htmlFor="password" className="small-1 text-gray font-semibold text-[16px]">Password</Label>
                     <input
@@ -162,7 +167,29 @@ const RegisterPage = () => {
                       placeholder="helloDataEase@1"
                       required
                     />
-                  </div>
+                  </div>*/}
+
+                  <div className="grid gap-2">
+		              <Label htmlFor="password" className="small-1 text-gray font-semibold text-[16px]">Password</Label>
+		              <div className="relative">
+		                <input
+		                  type={showPassword ? 'text' : 'password'}
+		                  id="password"
+		                  value={userData.password}
+		                  className="task-input"
+		                  onChange={(e) => setPassword(e.target.value)}
+		                  placeholder="helloDataEase@1"
+		                  required
+		                />
+		                <button
+		                  type="button"
+		                  className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray"
+		                  onClick={togglePasswordVisibility}
+		                >
+		                  {showPassword ? <i className="pi pi-eye"></i> : <i className="pi pi-eye-slash"></i> }
+		                </button>
+		              </div>
+		            </div>
 
                   <Label className="ml-auto inline-block text-sm leading-6 text-gray">
                     By registering, I agree to DataEase's <span className="font-bold text-black">Terms of Service</span> and <span className="font-bold text-black">Privacy policy</span>
