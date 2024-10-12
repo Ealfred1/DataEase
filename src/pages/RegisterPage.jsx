@@ -187,13 +187,18 @@ const RegisterPage = () => {
                       className="task-input"
                     >
                       <InputOTPGroup>
-                        <InputOTPSlot index={0} />
-                        <InputOTPSeparator />
-                        <InputOTPSlot index={1} />
-                        <InputOTPSeparator />
-                        <InputOTPSlot index={2} />
-                        <InputOTPSeparator />
-                        <InputOTPSlot index={3} />
+                      	<InputOTPGroup>
+                        	<InputOTPSlot index={0} />
+                        </InputOTPGroup>
+                        <InputOTPGroup>
+                        	<InputOTPSlot index={1} />
+                        </InputOTPGroup>
+                        <InputOTPGroup>
+                        	<InputOTPSlot index={2} />
+                        </InputOTPGroup>
+                        <InputOTPGroup>
+                        	<InputOTPSlot index={3} />
+                        </InputOTPGroup>
                       </InputOTPGroup>
                     </InputOTP>
                   </div>
@@ -206,12 +211,12 @@ const RegisterPage = () => {
                   </button>
 
                   {/* Countdown and Resend OTP Button */}
-                  <div className="mt-4 flex justify-between">
-                    <span className="text-sm text-gray-600">Resend OTP in {countdown}s</span>
+                  <div className="mt-4 flex justify-between items-center">
+                    <span className="text-sm text-gray">Resend OTP in {countdown}s</span>
                     <button
                       onClick={handleResendOtp}
                       disabled={!resendEnabled} // Disable until countdown finishes
-                      className={`inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 ${
+                      className={`inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white transition-colors focus:outline-none focus:ring-2 rounded-lg focus:ring-offset-2 ${
                         resendEnabled ? 'bg-green-600' : 'bg-gray-400 cursor-not-allowed'
                       }`}
                     >
