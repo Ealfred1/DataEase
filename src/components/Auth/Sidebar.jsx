@@ -21,7 +21,7 @@ const SideBar = ({ sideBarClose, handleSideBarToggle }) => {
           <li className="item">
             <Link to="/dashboard" className={`nav_link ${isActive('/dashboard')}`} title='Dashboard'>
               <span className="navlink_icon">
-                <i className="bx bx-home-alt"></i>
+                <i className="pi pi-home"></i>
               </span>
               <span className="navlink">Dashboard</span>
             </Link>
@@ -29,7 +29,7 @@ const SideBar = ({ sideBarClose, handleSideBarToggle }) => {
           <li className="item">
             <Link to="/task" className={`nav_link ${isActive('/task')}`} title='Task Overview'>
               <span className="navlink_icon">
-                <i className="bx bx-task"></i>
+                <i className="pi pi-file"></i>
               </span>
               <span className="navlink">Task Overview</span>
             </Link>
@@ -37,7 +37,7 @@ const SideBar = ({ sideBarClose, handleSideBarToggle }) => {
           <li className="item">
             <Link to="/category" className={`nav_link ${isActive('/category')}`} title='Categories'>
               <span className="navlink_icon">
-                <i className="bx bx-grid-alt"></i>
+                <i className="pi pi-box"></i>
               </span>
               <span className="navlink">Categories</span>
             </Link>
@@ -46,7 +46,7 @@ const SideBar = ({ sideBarClose, handleSideBarToggle }) => {
           <li className="item">
             <Link to="/search" className={`nav_link ${isActive('/search')}`} title='Search'>
               <span className="navlink_icon">
-                <i className="bx bx-search"></i>
+                <i className="pi pi-search"></i>
               </span>
               <span className="navlink">Search</span>
             </Link>
@@ -55,7 +55,7 @@ const SideBar = ({ sideBarClose, handleSideBarToggle }) => {
           <li className="item">
             <Link to="/projects" className={`nav_link ${isActive('/projects')}`} title='Projects'>
               <span className="navlink_icon">
-                <i className="bx bxl-codepen"></i>
+                <i className="pi pi-code"></i>
               </span>
               <span className="navlink">Projects</span>
             </Link>
@@ -65,26 +65,15 @@ const SideBar = ({ sideBarClose, handleSideBarToggle }) => {
           <li className="item">
             <Link to="/calendar" className={`nav_link ${isActive('/calendar')}`} title='Calendar'>
               <span className="navlink_icon">
-                <i className="bx bx-calendar"></i>
+                <i className="pi pi-calendar"></i>
               </span>
               <span className="navlink">Calendar</span>
             </Link>
           </li>
-
-          
-{/*          <li className="item">
-            <Link to="/tasks/filter" className={`nav_link ${isActive('/tasks/filter')}`} title='Filter Task'>
-              <span className="navlink_icon">
-                <i className="bx bx-filter"></i>
-              </span>
-              <span className="navlink">Filter Task</span>
-            </Link>
-          </li>
-*/}
           <li className="item">
             <Link to="/settings" className={`nav_link ${isActive('/settings')}`} title='Settings'>
               <span className="navlink_icon">
-                <i className="bx bx-cog"></i>
+                <i className="pi pi-cog"></i>
               </span>
               <span className="navlink">Settings</span>
             </Link>
@@ -95,7 +84,7 @@ const SideBar = ({ sideBarClose, handleSideBarToggle }) => {
           <div className="bottom collapse_sidebar text-center dark:bg-slate-900">
           <button title='Logout'>
             <span>Logout </span>
-            <i className='bx bx-log-out'></i>
+            <i className='pi pi-log-out'></i>
           </button>
           </div>
         </div>

@@ -13,7 +13,7 @@ const AuthLayout = () => {
     <>
       <div>
         <Navbar handleSideBarToggle={handleSideBarToggle} closed={sideBarClose} />
-        <SideBar sideBarClose={sideBarClose} handleSideBarToggle={handleSideBarToggle} />
+        <Sidebar sideBarClose={sideBarClose} handleSideBarToggle={handleSideBarToggle} />
         <div className="max-w-7xl h-screen mt-24 sm:ml-[90px]">
           <Outlet />
         </div>
