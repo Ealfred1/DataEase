@@ -14,15 +14,25 @@ export const AuthProvider = ({ children }) => {
 
   // Register user
   const register = async (userData) => {
-    try {
-      const response = await axiosInstance.post('/users/register/', userData);
-      setUser(response.data);
-      setOtpSent(true);
-      toast.success('Registration successful! OTP sent to your email.');
-    } catch (error) {
-      toast.error(error.response?.data?.message || 'Registration failed');
+  try {
+    const response = await axiosInstance.post('/users/register/', userData);
+    setUser(response.data);
+    setOtpSent(true);
+    toast.success('Registration successful! OTP sent to your email.');
+  } catch (error) {
+    const errors = error.response?.data || {};
+
+    // Check for specific field errors
+    if (errors.email) {
+      toast.error(errors.email[0]);
+    } else if (errors.username) {
+      toast.error(errors.username[0]);
+    } else {
+      toast.error('Registration failed');
     }
-  };
+  }
+};
+
 
   // Resend OTP
   const resendOtp = async (email) => {
@@ -30,7 +40,7 @@ export const AuthProvider = ({ children }) => {
       await axiosInstance.post('/users/resend-otp/', { email });
       toast.success('OTP resent to your email.');
     } catch (error) {
-      toast.error(error.response?.data?.message || 'Failed to resend OTP.');
+      toast.error(response?.data?.message || 'Failed to resend OTP.');
     }
   };
 
