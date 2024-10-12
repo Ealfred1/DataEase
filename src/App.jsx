@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom';
-import { Layout } from './components'
-import { LandingPage, LoginPage, RegisterPage, NotFound } from './pages'
+import { Layout, RequireAuth } from './components'
+import { LandingPage, LoginPage, RegisterPage, NotFound, DashboardPage } from './pages'
 
 const App = () => {
 
@@ -13,6 +13,12 @@ const App = () => {
           <Route path='/register' element={<RegisterPage />} />
           <Route path='/login' element={<LoginPage />} />
           <Route path='/*' element={<NotFound />} />
+        </Route>
+
+        <Route element={<RequireAuth />}>
+          <Route element={<Layout />}>
+            <Route path='/dashboard' element={<DashboardPage />} />
+          </Route>
         </Route>
       </Routes>
     </>
