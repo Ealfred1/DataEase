@@ -53,7 +53,7 @@ const LoginPage = () => {
           <div className="grid gap-4">
             <div className="grid gap-2">
               <Label htmlFor="username" className="small-1 text-gray font-semibold text-[16px]">Email / Username</Label>
-              <Input
+              <input
                 id="username"
                 type="text"
                 className="task-input"
@@ -66,7 +66,7 @@ const LoginPage = () => {
             <div className="grid gap-2">
               <Label htmlFor="password" className="small-1 text-gray font-semibold text-[16px]">Password</Label>
               <div className="relative">
-                <Input
+                <input
                   type={showPassword ? 'text' : 'password'}
                   id="password"
                   value={password}
