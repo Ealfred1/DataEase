@@ -13,9 +13,16 @@ module.exports = {
   	extend: {
   		animation: {
   			spotlight: 'spotlight 2s ease .75s 1 forwards',
-  			shimmer: 'shimmer 2s linear infinite'
+  			shimmer: 'shimmer 2s linear infinite',
+                "caret-blink": "caret-blink 1.25s ease-out infinite",
+        "caret-blink": "caret-blink 1.25s ease-out infinite",
+
   		},
   		keyframes: {
+          "caret-blink": {
+            "0%,70%,100%": { opacity: "1" },
+            "20%,50%": { opacity: "0" },
+          },
   			spotlight: {
   				'0%': {
   					opacity: '0',
