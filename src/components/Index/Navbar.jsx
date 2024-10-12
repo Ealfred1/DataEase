@@ -47,7 +47,7 @@ const Navbar = () => {
 
           <ul className="items-center justify-center gap-2 space-x-10 hidden lg:flex">
             <li className="navlink">
-              <a href="#home">Home</a>
+              <a href="/#home">Home</a>
             </li>
             <li className="navlink">
               <a href="#about">About Kap</a>

@@ -5,7 +5,7 @@ import { cn } from "../../lib/utils";
 import { motion } from "framer-motion";
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react'
-import Img from '../../assets/hero.png'
+import Img from '../../assets/hero2.png'
 
 const Hero = () => {
 	const ballRefs = useRef([]);
