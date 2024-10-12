@@ -47,7 +47,7 @@ const LoginPage = () => {
       <div className="flex items-center justify-center py-12">
         <form className="mx-auto grid w-[350px] gap-6" onSubmit={handleLogin}>
           <div className="grid gap-2 text-center">
-            <h1 className="h3 text-[54px] font-bold text-vibrantGreen new relative mb-3">Sign In</h1>
+            <h1 className="h3 text-[54px] font-bold text-vibrantGreen relative mb-3">Sign In</h1>
             <p className="text-gray small-1">Enter your credentials to Login to your account</p>
           </div>
           <div className="grid gap-4">
@@ -83,7 +83,7 @@ const LoginPage = () => {
                   {showPassword ? <i className="pi pi-eye"></i> : <i className="pi pi-eye-slash"></i> }
                 </button>
               </div>
-              <Link to="/forgot-password" className="ml-auto inline-block text-sm underline text-orangeYellow">
+              <Link to="/forgot-password" className="ml-auto inline-block text-sm underline text-slate-900">
                 Forgot your password?
               </Link>
             </div>
