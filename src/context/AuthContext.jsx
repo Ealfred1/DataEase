@@ -48,12 +48,12 @@ export const AuthProvider = ({ children }) => {
   };
 
   // Log in user (JWT Authentication)
-  const loginUser = async (username, password) => {
+  const loginUser = async (username, password, message) => {
     try {
       const { data } = await axiosInstance.post('/users/auth/jwt/create/', { username, password });
       localStorage.setItem('accessToken', data.access);
       localStorage.setItem('refreshToken', data.refresh);
-      toast.success('Login successful! Redirecting to dashboard...');
+      toast.success(message);
       navigate('/dashboard'); // Redirect after successful login
     } catch (error) {
       toast.error(error.response?.data?.message || 'Login failed.');

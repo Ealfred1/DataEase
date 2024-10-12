@@ -65,7 +65,7 @@ const RegisterPage = () => {
     e.preventDefault();
     setVerifying(true); // Start loader for OTP verification
     await verifyOtp(userData.email, otp);
-    loginUser(userData.username, userData.password);
+    loginUser(userData.username, userData.password, 'Redirecting to dashboard...');
     setVerifying(false); // End loader after OTP verification
   };
 

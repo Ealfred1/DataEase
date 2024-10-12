@@ -27,7 +27,7 @@ const LoginPage = () => {
 
     try {
       // Call the login function from AuthContext
-      await loginUser(username, password);
+      await loginUser(username, password, "Login Successful");
     } catch (error) {
       toast.error('Login failed. Please check your credentials.');
     } finally {
