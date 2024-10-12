@@ -40,9 +40,8 @@ export const AuthProvider = ({ children }) => {
       const response = await axiosInstance.post('/users/verify-otp/', { email, otp });
       setUser(response.data);
       setOtpVerified(true);
-
-      // After OTP verification, automatically log the user in
-      await loginUser(response.data.username, response.data.password);
+      toast.success('Verification Successful!');
+      
     } catch (error) {
       toast.error(error.response?.data?.message || 'OTP verification failed.');
     }
