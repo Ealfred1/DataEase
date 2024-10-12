@@ -104,7 +104,7 @@ const RegisterPage = () => {
               </p>
             </div>
             <div className="grid gap-4">
-              {!otpSent ? (
+              {otpSent ? (
                 <>
                   {/* Registration Form */}
                   <div className="grid gap-2">
@@ -212,7 +212,7 @@ const RegisterPage = () => {
                       onChange={(e) => setOtp(e)}
                       className="task-input"
                     >
-                      <InputOTPGroup className="space-x-6">
+                      <InputOTPGroup className="space-x-6 scale-[1.2]">
                       	<InputOTPGroup>
                         	<InputOTPSlot index={0} />
                         </InputOTPGroup>
