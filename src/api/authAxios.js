@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const authAxios = axios.create({
-  baseURL: 'https://vtu-h5yu.onrender.com/api',
+  baseURL: 'https://vtu-h5yu.onrender.com/',
   headers: {
     'Content-Type': 'application/json',
   },
