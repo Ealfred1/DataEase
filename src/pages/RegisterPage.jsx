@@ -35,7 +35,7 @@ const RegisterPage = () => {
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
-  
+
   // Handle changes in input fields
   const handleChange = (e) => {
     setUserData({
@@ -177,7 +177,7 @@ const RegisterPage = () => {
 		                  id="password"
 		                  value={userData.password}
 		                  className="task-input"
-		                  onChange={(e) => setPassword(e.target.value)}
+		                  onChange={handleChange}
 		                  placeholder="helloDataEase@1"
 		                  required
 		                />
