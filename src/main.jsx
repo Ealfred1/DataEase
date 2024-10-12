@@ -13,7 +13,17 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Router>
       <ScrollToTop />
-      <ToastContainer />
+      <ToastContainer
+          position="top-center" // Set global toast position
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+       />
       <AuthProvider>
         <App />
       </AuthProvider>
