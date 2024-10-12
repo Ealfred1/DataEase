@@ -10,6 +10,13 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSeparator,
+  InputOTPSlot,
+} from "@/components/ui/input-otp"
+
 
 const RegisterPage = () => {
   const { loginUser, register, otpSent, verifyOtp } = useContext(AuthContext);
@@ -144,8 +151,8 @@ const RegisterPage = () => {
               ) : (
                 <>
                   {/* OTP Verification Form */}
-                  <div className="grid gap-2">
-                    <input
+                  <div className="grid gap-2 place-content-center">
+                    {/*<input
                       id="otp"
                       type="text"
                       value={otp}
@@ -153,7 +160,32 @@ const RegisterPage = () => {
                       className="task-input"
                       placeholder="Enter OTP"
                       required
-                    />
+                    />*/}
+                  	<Label className="body-1 text-gray font-semibold text-[16px] text-center">Enter OTP</Label>
+		             <InputOTP
+				        maxLength={4}
+				        value={otp}
+				        onChange={(e) => setOtp(e)}
+				        className="task-input"
+				      >
+				        <InputOTPGroup>
+				          <InputOTPGroup>
+				          	<InputOTPSlot index={0} />
+				          </InputOTPGroup>
+				            <InputOTPSeparator />
+				          <InputOTPGroup>
+				          	<InputOTPSlot index={1} />
+				          </InputOTPGroup>
+				            <InputOTPSeparator />
+				          <InputOTPGroup>
+				          	<InputOTPSlot index={2} />
+				          </InputOTPGroup>
+				            <InputOTPSeparator />
+				            <InputOTPGroup>
+				          	<InputOTPSlot index={3} />
+				          </InputOTPGroup>
+				        </InputOTPGroup>
+				      </InputOTP>
                   </div>
                   <button onClick={handleVerifyOtp} className="inline-flex h-16 animate-shimmer items-center justify-center rounded-2xl border-none bg-[linear-gradient(110deg,#00c158,45%,#7ad67f,55%,#00c158)] body-2 bg-[length:200%_100%] px-16 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-50">
                     Verify OTP
