@@ -12,7 +12,7 @@ const MobileNav = ({ isOpen, toggleMenu }) => {
           			</div>
 					<ul className="flex flex-col gap-4 ml-2 space-y-4 text-gray">
 						<li className="navlink"><a href="#home">Home</a></li>
-						<li className="navlink"><a href="#about">About Kap</a></li>
+						<li className="navlink"><a href="#about">About Us</a></li>
 						<li className="navlink"><a href="#features">Features</a></li>
 						<li className="navlink"><a href="#community">Community</a></li>
 						<li className="navlink"><a href="#faq"> FAQs</a></li>
