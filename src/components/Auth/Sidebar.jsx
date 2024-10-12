@@ -1,16 +1,10 @@
 import { Link, useLocation } from 'react-router-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouse, faSun } from '@fortawesome/free-solid-svg-icons'
-import useAuth from '../hooks/useAuth'
-import { ToastContainer, toast } from "react-toastify"
-import "react-toastify/dist/ReactToastify.css"
 
 const SideBar = ({ sideBarClose, handleSideBarToggle }) => {
   
-  const { setAuth, logout } = useAuth()
   const location = useLocation()
   const isActive = (path) => {
-    return location.pathname === path ? 'bg-purpleP text-white' : 'hover:text-red-'
+    return location.pathname === path ? 'bg-vibrantGreen text-white' : 'hover:text-red-500'
   }
 
   const toggle = () => {
@@ -99,7 +93,7 @@ const SideBar = ({ sideBarClose, handleSideBarToggle }) => {
 
         <div className="bottom_content">  
           <div className="bottom collapse_sidebar text-center dark:bg-slate-900">
-          <button onClick={logout} title='Logout'>
+          <button title='Logout'>
             <span>Logout </span>
             <i className='bx bx-log-out'></i>
           </button>
