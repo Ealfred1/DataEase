@@ -12,7 +12,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
 const RegisterPage = () => {
-  const { register, otpSent, verifyOtp } = useContext(AuthContext);
+  const { loginUser, register, otpSent, verifyOtp } = useContext(AuthContext);
   const [userData, setUserData] = useState({
     full_name: '',
     username: '',
@@ -45,6 +45,7 @@ const RegisterPage = () => {
   const handleVerifyOtp = (e) => {
     e.preventDefault();
     verifyOtp(userData.email, otp);
+    loginUser(userData.username, userData.password)
   };
 
   return (
