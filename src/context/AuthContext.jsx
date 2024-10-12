@@ -57,18 +57,26 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // Log in user (JWT Authentication)
-  const loginUser = async (username, password, message) => {
-    try {
-      const { data } = await axiosInstance.post('/users/auth/jwt/create/', { username, password });
-      localStorage.setItem('accessToken', data.access);
-      localStorage.setItem('refreshToken', data.refresh);
-      toast.success(message);
-      navigate('/dashboard'); // Redirect after successful login
-    } catch (error) {
-      toast.error(error.response?.data?.message || 'Login failed.');
+// Log in user (JWT Authentication)
+const loginUser = async (username, password, message) => {
+  try {
+    const { data } = await axiosInstance.post('/users/auth/jwt/create/', { username, password });
+    localStorage.setItem('accessToken', data.access);
+    localStorage.setItem('refreshToken', data.refresh);
+    toast.success(message);
+    navigate('/dashboard'); // Redirect after successful login
+  } catch (error) {
+    const errorMessage = error.response?.data?.detail;
+
+    // Check for the specific error message from the backend
+    if (errorMessage === "No active account found with the given credentials") {
+      toast.error('Invalid credentials');
+    } else {
+      toast.error('Login failed');
     }
-  };
+  }
+};
+
 
   return (
     <AuthContext.Provider
