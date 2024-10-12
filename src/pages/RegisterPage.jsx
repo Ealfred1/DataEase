@@ -179,14 +179,13 @@ const RegisterPage = () => {
                 <>
                   {/* OTP Verification Form */}
                   <div className="grid gap-2 place-content-center">
-                    <Label className="body-1 text-gray font-semibold text-[16px] text-center">Enter OTP</Label>
                     <InputOTP
                       maxLength={4}
                       value={otp}
                       onChange={(e) => setOtp(e)}
                       className="task-input"
                     >
-                      <InputOTPGroup>
+                      <InputOTPGroup className="space-x-6">
                       	<InputOTPGroup>
                         	<InputOTPSlot index={0} />
                         </InputOTPGroup>
