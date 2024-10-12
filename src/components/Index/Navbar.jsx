@@ -50,7 +50,7 @@ const Navbar = () => {
               <a href="/#home">Home</a>
             </li>
             <li className="navlink">
-              <a href="#about">About Kap</a>
+              <a href="#about">About Us</a>
             </li>
             <li className="navlink">
               <a href="#features">Features</a>
