@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { Link } from 'react-router-dom';
 import Lottie from 'lottie-react';
@@ -6,20 +6,18 @@ import animationData from '../assets/Animation - 1728603847074.json';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSeparator,
   InputOTPSlot,
-} from "@/components/ui/input-otp"
-
+} from "@/components/ui/input-otp";
 
 const RegisterPage = () => {
-  const { loginUser, register, otpSent, verifyOtp } = useContext(AuthContext);
+  const { loginUser, register, otpSent, verifyOtp, resendOtp } = useContext(AuthContext);
   const [userData, setUserData] = useState({
     full_name: '',
     username: '',
@@ -28,7 +26,12 @@ const RegisterPage = () => {
     password: '',
   });
   const [otp, setOtp] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [verifying, setVerifying] = useState(false);
+  const [countdown, setCountdown] = useState(60);
+  const [resendEnabled, setResendEnabled] = useState(false);
 
+  // Handle changes in input fields
   const handleChange = (e) => {
     setUserData({
       ...userData,
@@ -36,9 +39,11 @@ const RegisterPage = () => {
     });
   };
 
-  const handleRegister = (e) => {
+  // Register handler
+  const handleRegister = async (e) => {
     e.preventDefault();
-    register({
+    setLoading(true); // Start loader for registration
+    await register({
       first_name: userData.full_name.split(' ')[0],
       last_name: userData.full_name.split(' ')[1] || '',
       phone_number: userData.phone_number,
@@ -47,12 +52,34 @@ const RegisterPage = () => {
       password: userData.password,
       is_active: false,
     });
+    setLoading(false); // End loader after registration
   };
 
-  const handleVerifyOtp = (e) => {
+  // OTP Verification handler
+  const handleVerifyOtp = async (e) => {
     e.preventDefault();
-    verifyOtp(userData.email, otp);
-    loginUser(userData.username, userData.password)
+    setVerifying(true); // Start loader for OTP verification
+    await verifyOtp(userData.email, otp);
+    loginUser(userData.username, userData.password);
+    setVerifying(false); // End loader after OTP verification
+  };
+
+  // Countdown timer for OTP resend
+  useEffect(() => {
+    let timer;
+    if (otpSent && countdown > 0) {
+      timer = setInterval(() => setCountdown((prev) => prev - 1), 1000);
+    } else if (countdown === 0) {
+      setResendEnabled(true); // Enable resend button after 60 seconds
+    }
+    return () => clearInterval(timer);
+  }, [otpSent, countdown]);
+
+  // Resend OTP handler
+  const handleResendOtp = async () => {
+    setCountdown(60); // Reset countdown
+    setResendEnabled(false); // Disable resend button again
+    await resendOtp(userData.email);
   };
 
   return (
@@ -76,7 +103,7 @@ const RegisterPage = () => {
                 <>
                   {/* Registration Form */}
                   <div className="grid gap-2">
-                  	<Label htmlFor="full-name" className="small-1 text-gray font-semibold text-[16px]">Full Name</Label>
+                    <Label htmlFor="full_name" className="small-1 text-gray font-semibold text-[16px]">Full Name</Label>
                     <input
                       id="full_name"
                       type="text"
@@ -86,9 +113,9 @@ const RegisterPage = () => {
                       placeholder="Sam Smither"
                       required
                     />
-                   </div>
-                   <div className="grid gap-2">
-                   <Label htmlFor="username" className="small-1 text-gray font-semibold text-[16px]">Username</Label>
+                  </div>
+                  <div className="grid gap-2">
+                    <Label htmlFor="username" className="small-1 text-gray font-semibold text-[16px]">Username</Label>
                     <input
                       id="username"
                       type="text"
@@ -98,9 +125,9 @@ const RegisterPage = () => {
                       placeholder="Sterling"
                       required
                     />
-                   </div>
-                   <div className="grid gap-2">
-                   <Label htmlFor="phone" className="small-1 text-gray font-semibold text-[16px]">Phone Number</Label>
+                  </div>
+                  <div className="grid gap-2">
+                    <Label htmlFor="phone_number" className="small-1 text-gray font-semibold text-[16px]">Phone Number</Label>
                     <input
                       id="phone_number"
                       type="tel"
@@ -110,9 +137,9 @@ const RegisterPage = () => {
                       placeholder="09132347584"
                       required
                     />
-                   </div>
-                   <div className="grid gap-2">
-                   <Label htmlFor="email" className="small-1 text-gray font-semibold text-[16px]">Email</Label>
+                  </div>
+                  <div className="grid gap-2">
+                    <Label htmlFor="email" className="small-1 text-gray font-semibold text-[16px]">Email</Label>
                     <input
                       id="email"
                       type="email"
@@ -122,10 +149,10 @@ const RegisterPage = () => {
                       placeholder="email@example.com"
                       required
                     />
-                   </div>
+                  </div>
 
-                   <div className="grid gap-2">
-                   <Label htmlFor="password" className="small-1 text-gray font-semibold text-[16px]">Password</Label>
+                  <div className="grid gap-2">
+                    <Label htmlFor="password" className="small-1 text-gray font-semibold text-[16px]">Password</Label>
                     <input
                       id="password"
                       type="password"
@@ -135,72 +162,73 @@ const RegisterPage = () => {
                       placeholder="helloDataEase@1"
                       required
                     />
-                   </div>
+                  </div>
 
-                   <Label
-	                  className="ml-auto inline-block text-sm leading-6 text-gray"
-	                >
-	                  By registering, I agree to DataEase's <span className="font-bold text-black">Terms of Service</span> and <span className="font-bold text-black">Privacy policy</span>
-	                </Label>
-                  <button onClick={handleRegister} className="inline-flex h-16 animate-shimmer items-center justify-center rounded-2xl border-none bg-[linear-gradient(110deg,#00c158,45%,#7ad67f,55%,#00c158)] body-2 bg-[length:200%_100%] px-16 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-                    Sign Up
+                  <Label className="ml-auto inline-block text-sm leading-6 text-gray">
+                    By registering, I agree to DataEase's <span className="font-bold text-black">Terms of Service</span> and <span className="font-bold text-black">Privacy policy</span>
+                  </Label>
+                  <button
+                    onClick={handleRegister}
+                    className="inline-flex h-16 animate-shimmer items-center justify-center rounded-2xl border-none bg-[linear-gradient(110deg,#00c158,45%,#7ad67f,55%,#00c158)] body-2 bg-[length:200%_100%] px-16 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+                    disabled={loading} // Disable button while loading
+                  >
+                    {loading ? 'Signing up...' : 'Sign Up'}
                   </button>
-
-
                 </>
               ) : (
                 <>
                   {/* OTP Verification Form */}
                   <div className="grid gap-2 place-content-center">
-                    {/*<input
-                      id="otp"
-                      type="text"
+                    <Label className="body-1 text-gray font-semibold text-[16px] text-center">Enter OTP</Label>
+                    <InputOTP
+                      maxLength={4}
                       value={otp}
-                      onChange={(e) => setOtp(e.target.value)}
+                      onChange={(e) => setOtp(e)}
                       className="task-input"
-                      placeholder="Enter OTP"
-                      required
-                    />*/}
-                  	<Label className="body-1 text-gray font-semibold text-[16px] text-center">Enter OTP</Label>
-		             <InputOTP
-				        maxLength={4}
-				        value={otp}
-				        onChange={(e) => setOtp(e)}
-				        className="task-input"
-				      >
-				        <InputOTPGroup>
-				          <InputOTPGroup>
-				          	<InputOTPSlot index={0} />
-				          </InputOTPGroup>
-				            <InputOTPSeparator />
-				          <InputOTPGroup>
-				          	<InputOTPSlot index={1} />
-				          </InputOTPGroup>
-				            <InputOTPSeparator />
-				          <InputOTPGroup>
-				          	<InputOTPSlot index={2} />
-				          </InputOTPGroup>
-				            <InputOTPSeparator />
-				            <InputOTPGroup>
-				          	<InputOTPSlot index={3} />
-				          </InputOTPGroup>
-				        </InputOTPGroup>
-				      </InputOTP>
+                    >
+                      <InputOTPGroup>
+                        <InputOTPSlot index={0} />
+                        <InputOTPSeparator />
+                        <InputOTPSlot index={1} />
+                        <InputOTPSeparator />
+                        <InputOTPSlot index={2} />
+                        <InputOTPSeparator />
+                        <InputOTPSlot index={3} />
+                      </InputOTPGroup>
+                    </InputOTP>
                   </div>
-                  <button onClick={handleVerifyOtp} className="inline-flex h-16 animate-shimmer items-center justify-center rounded-2xl border-none bg-[linear-gradient(110deg,#00c158,45%,#7ad67f,55%,#00c158)] body-2 bg-[length:200%_100%] px-16 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-                    Verify OTP
+                  <button
+                    onClick={handleVerifyOtp}
+                    className="inline-flex h-16 animate-shimmer items-center justify-center rounded-2xl border-none bg-[linear-gradient(110deg,#00c158,45%,#7ad67f,55%,#00c158)] body-2 bg-[length:200%_100%] px-16 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+                    disabled={verifying} // Disable button while verifying OTP
+                  >
+                    {verifying ? 'Verifying...' : 'Verify OTP'}
                   </button>
+
+                  {/* Countdown and Resend OTP Button */}
+                  <div className="mt-4 flex justify-between">
+                    <span className="text-sm text-gray-600">Resend OTP in {countdown}s</span>
+                    <button
+                      onClick={handleResendOtp}
+                      disabled={!resendEnabled} // Disable until countdown finishes
+                      className={`inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 ${
+                        resendEnabled ? 'bg-green-600' : 'bg-gray-400 cursor-not-allowed'
+                      }`}
+                    >
+                      Resend OTP
+                    </button>
+                  </div>
                 </>
               )}
             </div>
-            {!otpSent && (
-              <div className="mt-4 text-center text-sm text-green-900">
-                Already have an account?{" "}
-                <Link to="/login" className="underline">
-                  Sign In
+            <div className="text-center">
+              <p className="text-gray text-sm text-green-900">
+                Already have an account?{' '}
+                <Link to="/login" className="font-semibold underline">
+                  Login
                 </Link>
-              </div>
-            )}
+              </p>
+            </div>
           </div>
         </div>
       </div>
