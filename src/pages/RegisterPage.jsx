@@ -196,7 +196,7 @@ const RegisterPage = () => {
                   </Label>
                   <button
                     onClick={handleRegister}
-                    className="inline-flex h-16 animate-shimmer items-center justify-center rounded-2xl border-none bg-[linear-gradient(110deg,#00c158,45%,#7ad67f,55%,#00c158)] body-2 bg-[length:200%_100%] px-16 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+                    className={`inline-flex h-16 animate-shimmer items-center justify-center rounded-2xl border-none bg-[linear-gradient(110deg,#00c158,45%,#7ad67f,55%,#00c158)] body-2 bg-[length:200%_100%] px-16 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-50 ${loading ? 'cursor-not-allowed opacity-50' : ''}`}
                     disabled={loading} // Disable button while loading
                   >
                     {loading ? 'Signing up...' : 'Sign Up'}
