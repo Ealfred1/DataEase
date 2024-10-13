@@ -5,7 +5,7 @@ const SideBar = ({ sideBarClose, handleSideBarToggle }) => {
   
   const location = useLocation()
   const isActive = (path) => {
-    return location.pathname === path ? 'bg-vibrantGreen text-white activea' : 'text-white'
+    return location.pathname === path ? 'ring ring-2 ring-vibrantGreen text-white' : 'text-white'
   }
 
   const toggle = () => {
