@@ -18,7 +18,7 @@ const SideBar = ({ sideBarClose, handleSideBarToggle }) => {
       <div className="menu_content pt-10" onClick={toggle}>
         <ul className="menu_items space-y-6">
           {/* Menu Section */}
-          <div className="menu_title font-semibold">Menu</div> 
+          <div className="menu_title font-semibold menu_dashboard"></div> 
           <li className="item">
             <Link to="/fund" className={`nav_link ${isActive('/fund')}`} title='Fund Account'>
               <span className="navlink_icon">
@@ -43,35 +43,25 @@ const SideBar = ({ sideBarClose, handleSideBarToggle }) => {
               <span className="navlink">Airtime Sub</span>
             </Link>
           </li>
-          
-          {/* Bills Section */}
           <li className="item">
             <Link to="/bills" className={`nav_link ${isActive('/bills')}`} title='Bills'>
               <span className="navlink_icon">
                 <i className="pi pi-credit-card"></i>
               </span>
-              <span className="navlink">Bills</span>
+              <span className="navlink">                  <span className="navlink">Cable Sub</span></span>
             </Link>
-            <ul className="ml-6 space-y-2">
-              <li>
-                <Link to="/bills/cable-sub" className={`nav_link ${isActive('/bills/cable-sub')}`} title='Cable Sub'>
-                  <span className="navlink_icon"><i className="pi pi-tv"></i></span>
-                  <span className="navlink">Cable Sub</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/bills/electricity-sub" className={`nav_link ${isActive('/bills/electricity-sub')}`} title='Electricity Sub'>
-                  <span className="navlink_icon"><i className="pi pi-bolt"></i></span>
-                  <span className="navlink">Electricity Sub</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/bills/exam-sub" className={`nav_link ${isActive('/bills/exam-sub')}`} title='NECO/WAEC'>
-                  <span className="navlink_icon"><i className="pi pi-book"></i></span>
-                  <span className="navlink">NECO/WAEC</span>
-                </Link>
-              </li>
-            </ul>
+          </li>
+          <li>
+            <Link to="/bills/electricity-sub" className={`nav_link ${isActive('/bills/electricity-sub')}`} title='Electricity Sub'>
+              <span className="navlink_icon"><i className="pi pi-bolt"></i></span>
+              <span className="navlink">Electricity Sub</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/bills/exam-sub" className={`nav_link ${isActive('/bills/exam-sub')}`} title='NECO/WAEC'>
+              <span className="navlink_icon"><i className="pi pi-book"></i></span>
+              <span className="navlink">NECO/WAEC</span>
+            </Link>
           </li>
 
           {/* Admin Section */}

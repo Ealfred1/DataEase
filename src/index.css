@@ -379,9 +379,22 @@ transform: translateX(0);
   content: "General";
 }
 
-.menu_setting::before {
-  content: "";
+.menu_admin::before {
+  content: "Admin";
 }
+
+.menu_trans::before {
+  content: "Transactions";
+}
+
+.menu_setting::before {
+  content: "Profile";
+}
+
+.menu_support::before {
+  content: "Support";
+}
+
 .sidebar.close .menu_title::before {
   content: "";
   position: absolute;
