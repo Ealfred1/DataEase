@@ -162,7 +162,7 @@ const SideBar = ({ sideBarClose, handleSideBarToggle }) => {
               <span className="navlink_icon">
                 <i className="pi pi-money-bill"></i>
               </span>
-              <span className="navlink">Pricing</span>
+              <span className="">Pricing</span>
             </Link>
           </li>
 
