@@ -40,9 +40,9 @@ const Navbar = ({ handleSideBarToggle, closed }) => {
         />
         {profileMenuOpen && (
           <div className="absolute right-0 mt-3 w-48 bg-white dark:bg-slate-800 rounded-md shadow-lg">
-            <Link to="/profile" className="block px-4 py-2 text-gray hover:bg-vibrantGreen rounded-t-md">Profile</Link>
-            <Link to="/settings" className="block px-4 py-2 text-gray hover:bg-vibrantGreen">Settings</Link>
-            <Link to="/logout" className="block px-4 py-2 text-gray w-full hover:bg-vibrantGreen rounded-b-md">Logout</Link>
+            <Link to="/profile" className="block px-4 py-4 text-gray hover:bg-vibrantGreen rounded-t-md hover:text-white ">Profile</Link>
+            <Link to="/settings" className="block px-4 py-4 text-gray hover:bg-vibrantGreen hover:text-white ">Settings</Link>
+            <Link to="/logout" className="block px-4 py-4 text-gray  hover:text-white w-full hover:bg-vibrantGreen rounded-b-md hover:text-white ">Logout</Link>
           </div>
         )}
       </div>
