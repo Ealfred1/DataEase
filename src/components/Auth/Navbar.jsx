@@ -35,7 +35,7 @@ const Navbar = ({ handleSideBarToggle, closed }) => {
         <img 
           src={Image} 
           alt="logo_img" 
-          className="w-[40px] h-[40px] rounded-full cursor-pointer object-cover" 
+          className="w-[40px] h-[40px] rounded-full cursor-pointer object-cover ring ring-4 ring-offset-2 ring-vibrantGreen" 
           onClick={() => setProfileMenuOpen(!profileMenuOpen)}
         />
         {profileMenuOpen && (
