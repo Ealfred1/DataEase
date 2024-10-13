@@ -210,9 +210,9 @@ const RegisterPage = () => {
                       maxLength={4}
                       value={otp}
                       onChange={(e) => setOtp(e)}
-                      className="task-input"
+                      className="task-input mb-1"
                     >
-                      <InputOTPGroup className="space-x-6 scale-[1.2]">
+                      <InputOTPGroup className="space-x-6 scale-[1.5]">
                       	<InputOTPGroup>
                         	<InputOTPSlot index={0} />
                         </InputOTPGroup>
