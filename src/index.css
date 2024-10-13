@@ -426,7 +426,11 @@ transform: translateX(0);
   left: -20px;
 }
 .navlink_icon:hover {
-  @apply bg-vibrantGreen;
+  @apply bg-vibrantGreen text-white;
+}
+
+.activea {
+  @apply bg-vibrantGreen text-white;
 }
 .sidebar .nav_link {
   display: flex;
@@ -439,10 +443,14 @@ transform: translateX(0);
   white-space: nowrap;
   transform: scale(0.9);
 }
-.sidebar.close .navlink {
+.sidebar.close .navlink2 {
   display: none;
 }
 .nav_link:hover {
+  @apply bg-vibrantGreen text-white;
+}
+
+.navlink2:hover {
   @apply bg-vibrantGreen text-white;
 }
 .sidebar.close .nav_link:hover {
