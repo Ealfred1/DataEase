@@ -413,7 +413,7 @@ transform: translateX(0);
   left: -20px;
 }
 .navlink_icon:hover {
-  background: #8083ff;
+  @apply bg-vibrantGreen;
 }
 .sidebar .nav_link {
   display: flex;
@@ -430,8 +430,7 @@ transform: translateX(0);
   display: none;
 }
 .nav_link:hover {
-  color: white;
-  background: #8083ff;
+  @apply bg-vibrantGreen text-white;
 }
 .sidebar.close .nav_link:hover {
   color: white;
