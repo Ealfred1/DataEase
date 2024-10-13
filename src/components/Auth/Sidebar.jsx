@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
+import Image from '../../assets/hero.png'
 
 const SideBar = ({ sideBarClose, handleSideBarToggle }) => {
   
@@ -167,10 +168,13 @@ const SideBar = ({ sideBarClose, handleSideBarToggle }) => {
           {/* Logout Section */}
           <div className="bottom_content">  
             <div className="bottom collapse_sidebar text-center dark:bg-slate-900">
-              <button title='Logout'>
-                <span>Logout </span>
-                <i className='pi pi-sign-out'></i>
-              </button>
+              <div className="flex items-center">
+                <img src={Image} alt="" className="" />
+              </div>
+              <div className="pr-[1.5px]">
+                <h1 className="text-sm font-bold text-black text-opacity-80 text-left">Eric Alfred</h1>
+                <p className="text-sm">alfrederic371@gmail.com</p>
+              </div>
             </div>
           </div>
         </ul>
