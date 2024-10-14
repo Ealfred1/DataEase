@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { getAccess_token, refreshAccessToken } from './AuthProvider'; // Import the token getter and refresh function
+import { getAccess_token, refreshAccessToken } from '../context/AuthContext'; //Import the token getter and refresh function
 
 const authAxios = axios.create({
   baseURL: 'https://vtu-h5yu.onrender.com/', // Your API base URL
