@@ -21,6 +21,7 @@
     "framer-motion": "^11.11.7",
     "gsap": "^3.12.5",
     "input-otp": "^1.2.4",
+    "js-cookie": "^3.0.5",
     "lottie-react": "^2.4.0",
     "lucide-react": "^0.451.0",
     "mini-svg-data-uri": "^1.4.4",
