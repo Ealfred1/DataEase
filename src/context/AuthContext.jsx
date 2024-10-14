@@ -10,6 +10,21 @@ let access_token = null; // Store in memory
 
 export const getAccess_token = () => access_token;
 
+// Refresh access token when expired (moved outside of any component/function)
+export const refreshAccessToken = async () => {
+  try {
+    const refreshToken = Cookies.get('refreshToken');
+    if (refreshToken) {
+      const { data } = await axiosInstance.post('/users/auth/jwt/refresh/', { refresh: refreshToken });
+      access_token = data.access; // Store in memory
+      return data.access;
+    }
+  } catch (error) {
+    toast.error('Session expired. Please log in again.');
+    return null;
+  }
+};
+
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [otpSent, setOtpSent] = useState(false);
@@ -76,23 +91,6 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // Refresh access token when expired
-  export const refreshAccessToken = async () => {
-    try {
-      const refreshToken = Cookies.get('refreshToken');
-      if (refreshToken) {
-        const { data } = await axiosInstance.post('/users/auth/jwt/refresh/', { refresh: refreshToken });
-        setAccessToken(data.access); // Update access token in memory
-        access_token = data.access;
-      } else {
-        navigate('/login');
-      }
-    } catch (error) {
-      toast.error('Session expired. Please log in again.');
-      logout(); // Log out user if refresh token fails
-    }
-  };
-
   // Log out user and clear tokens
   const logout = () => {
     setAccessToken(null);
@@ -135,5 +133,3 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-// Export AuthContext and functions
-export { AuthProvider, AuthContext, getAccess_token, refreshAccessToken };
