@@ -40,9 +40,9 @@ const Navbar = () => {
       >
         <div className="w-full flex items-center justify-between py-4 px-[1rem] md:px-[2rem]">
           <div className="text-vibrantGreen text-3xl font-bold">
-            <h1 className="">
+            <Link to="/" className="">
               Data<span className="text-gray">Ease</span>
-            </h1>
+            </Link>
           </div>
 
           <ul className="items-center justify-center gap-2 space-x-10 hidden lg:flex">

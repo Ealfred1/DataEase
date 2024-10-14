@@ -586,7 +586,12 @@ transform: translateX(0);
     scrollbar-width: none; /* Firefox */
   }
 
-
+  
+  /* END of Header */
+  /* START of Hero */
+  .hero-img_res {
+    @apply max-lg:-top-40 max-lg:left-[calc(50%-280px)] max-lg:w-[1160px] max-md:bottom-[-590px] max-md:left-[calc(50%-500px)] max-md:top-auto;
+  }
 }
 
 

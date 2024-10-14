@@ -3,9 +3,9 @@ import { Hero } from '../components/'
 
 const LandingPage = () => {
 	return (
-		<>
+		<div className="overflow-hidden">
 			<Hero />
-		</>
+		</div>
 	)
 }
 
