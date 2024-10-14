@@ -6,6 +6,10 @@ import Cookies from 'js-cookie'; // To manage HTTP-only cookies
 
 export const AuthContext = createContext();
 
+let access_token = null; // Store in memory
+
+export const getAccess_token = () => access_token;
+
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [otpSent, setOtpSent] = useState(false);
@@ -18,6 +22,7 @@ export const AuthProvider = ({ children }) => {
     const storedAccessToken = Cookies.get('accessToken');
     if (storedAccessToken) {
       setAccessToken(storedAccessToken);
+      access_token = storedAccessToken;
     }
   }, []);
 
@@ -60,7 +65,8 @@ export const AuthProvider = ({ children }) => {
     try {
       const { data } = await axiosInstance.post('/users/auth/jwt/create/', { username, password });
       // Store tokens securely
-      setAccessToken(data.access);  // Store in memory
+      setAccessToken(data.access);
+      access_token = data.access;  // Store in memory
       Cookies.set('refreshToken', data.refresh, { httpOnly: true, secure: true }); // HTTP-only cookie
 
       toast.success('Login successful!');
@@ -71,12 +77,13 @@ export const AuthProvider = ({ children }) => {
   };
 
   // Refresh access token when expired
-  const refreshAccessToken = async () => {
+  export const refreshAccessToken = async () => {
     try {
       const refreshToken = Cookies.get('refreshToken');
       if (refreshToken) {
         const { data } = await axiosInstance.post('/users/auth/jwt/refresh/', { refresh: refreshToken });
         setAccessToken(data.access); // Update access token in memory
+        access_token = data.access;
       } else {
         navigate('/login');
       }
@@ -89,6 +96,7 @@ export const AuthProvider = ({ children }) => {
   // Log out user and clear tokens
   const logout = () => {
     setAccessToken(null);
+    access_token = null;
     setUser(null);
     Cookies.remove('refreshToken'); // Remove refresh token cookie
     navigate('/login');
@@ -126,3 +134,6 @@ export const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
+
+// Export AuthContext and functions
+export { AuthProvider, AuthContext, getAccess_token, refreshAccessToken };
