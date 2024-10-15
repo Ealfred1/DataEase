@@ -29,6 +29,8 @@ export const refreshAccessToken = async () => {
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [accessToken, setAccessToken] = useState(null); // Store token in memory
+  const [otpSent, setOtpSent] = useState(false);
+  const [otpVerified, setOtpVerified] = useState(false);
   const navigate = useNavigate();
 
   // Check if access token exists or refresh it when the page loads
