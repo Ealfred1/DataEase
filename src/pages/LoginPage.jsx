@@ -1,5 +1,5 @@
-import { useState, useRef, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useRef, useContext, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext'; // Import the AuthContext
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -15,11 +15,19 @@ const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false); // Loading state for button disabling
 
-  const { loginUser } = useContext(AuthContext); // Access login function from AuthContext
+  const { loginUser, accessToken } = useContext(AuthContext); // Access login function and token from AuthContext
+  const navigate = useNavigate();
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+
+  // Redirect if the user is already logged in
+  useEffect(() => {
+    if (accessToken) {
+      navigate('/dashboard'); // Redirect to dashboard if logged in
+    }
+  }, [accessToken, navigate]);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -80,7 +88,7 @@ const LoginPage = () => {
                   className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray"
                   onClick={togglePasswordVisibility}
                 >
-                  {showPassword ? <i className="pi pi-eye"></i> : <i className="pi pi-eye-slash"></i> }
+                  {showPassword ? <i className="pi pi-eye"></i> : <i className="pi pi-eye-slash"></i>}
                 </button>
               </div>
               <Link to="/forgot-password" className="ml-auto inline-block text-sm underline text-slate-900">
