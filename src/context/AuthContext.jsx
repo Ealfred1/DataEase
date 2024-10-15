@@ -65,6 +65,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const response = await axiosInstance.post('/users/register/', userData);
       setUser(response.data);
+      setOtpSent(true);
       toast.success('Registration successful! OTP sent to your email.');
     } catch (error) {
       handleError(error);
@@ -76,6 +77,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const response = await axiosInstance.post('/users/verify-otp/', { email, otp });
       setUser(response.data);
+      setOtpVerified(true);
       toast.success('Verification Successful!');
     } catch (error) {
       toast.error(error.response?.data?.message || 'OTP verification failed.');
@@ -126,6 +128,8 @@ export const AuthProvider = ({ children }) => {
       value={{
         user,
         accessToken,
+        otpSent,
+        otpVerified,
         register,
         verifyOtp,
         loginUser,
