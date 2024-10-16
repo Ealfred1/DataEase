@@ -2,12 +2,12 @@ import React from 'react'
 
 const DashboardPage = () => {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto bg-vibrantGreen">
       {/* Main Dashboard Sections */}
       <div className="flex flex-col sm:flex-row justify-between items-center sm:space-x-3 px-3">
         
         {/* Welcome Section - Left Side */}
-        <div className="w-full sm:w-[70%] h-80 bg-vibrantGreen bg-opacity-10 border border-vibrantGreen rounded-2xl px-7 pt-4 pb-5">
+        <div className="w-full md:w-[70%] h-80 bg-vibrantGreen bg-opacity-10 border border-vibrantGreen rounded-2xl px-7 pt-4 pb-5">
           <div className="space-y-5 pt-10">
             <h1 className="text-2xl sm:text-3xl font-semibold text-gray-700">Welcome back, John!</h1>
             <p className="text-gray-500 tracking-wide">Explore your dashboard</p>
@@ -18,7 +18,7 @@ const DashboardPage = () => {
         </div>
 
         {/* Wallet Balance & Referral Bonus - Right Side */}
-        <div className="w-full sm:w-[30%] h-full bg-gradient-to-r from-vibrantGreen to-blue-400 rounded-2xl pl-6 py-8 space-y-8 mt-9 sm:mt-0">
+        <div className="w-full md:w-[30%] h-80 bg-vibrantGreen bg-opacity-10 border border-vibrantGreen rounded-2xl pl-6 py-8 space-y-8 sm:mt-0">
           <div className="space-y-4">
             <p className="text-gray-800 text-lg sm:text-xl mb-1">Wallet Balance</p>
             <p className="font-bold text-gray-900 text-2xl sm:text-3xl">₦500,000</p>
