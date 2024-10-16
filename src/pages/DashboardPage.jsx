@@ -2,23 +2,37 @@ import React from 'react'
 
 const DashboardPage = () => {
   return (
-    <div className="container mx-auto bg-vibrantGreen">
+    <div className="container mx-auto">
       {/* Main Dashboard Sections */}
-      <div className="flex flex-col sm:flex-row justify-between items-center sm:space-x-3 px-3">
+      <div className="flex flex-col md:flex-row justify-between items-center md:space-x-3 space-x-0 px-3">
         
         {/* Welcome Section - Left Side */}
-        <div className="w-full md:w-[70%] h-80 bg-vibrantGreen bg-opacity-10 border border-vibrantGreen rounded-2xl px-7 pt-4 pb-5">
-          <div className="space-y-5 pt-10">
-            <h1 className="text-2xl sm:text-3xl font-semibold text-gray-700">Welcome back, John!</h1>
-            <p className="text-gray-500 tracking-wide">Explore your dashboard</p>
-            <button className="w-80 bg-white text-vibrantGreen font-bold py-2 px-4 rounded-lg hover:bg-vibrantGreen hover:text-white transition">
-              Fund Wallet
-            </button>
+        <div className="w-full md:w-[70%] h-80 bg-vibrantGreen bg-opacity-10 border border-vibrantGreen border-opacity-50 rounded-2xl px-7 pt-4 pb-5 flex gap-2 flex-col md:flex-row justify-between relative">
+          <div className="pt-10">
+            <p className="text-neutral-700">Hello! 👋</p>
+            <h1 className="text-2xl sm:text-3xl font-semibold text-gray-700 mb-3">Eric Alfred</h1>
+            <p className="text-gray-500 tracking-wide mb-3">Explore your dashboard</p>
+
+            <div className="absolute bottom-5 flex justify-between gap-2">
+              <button className="">Fund Wallet</button>
+              <button className="">Upgrade Account</button>
+            </div>
+          </div>
+
+          <div className="pt-10">
+          <div className="space-y-4">
+            <p className="text-gray-800 text-lg sm:text-xl mb-1">Wallet Balance</p>
+            <p className="font-bold text-gray-900 text-2xl sm:text-3xl">₦500,000</p>
+          </div>
+          <div className="space-y-4">
+            <p className="text-gray-800 text-lg sm:text-xl">Referral Bonus</p>
+            <p className="font-bold text-gray-900 text-2xl sm:text-3xl">₦50,000</p>
+          </div>
           </div>
         </div>
 
         {/* Wallet Balance & Referral Bonus - Right Side */}
-        <div className="w-full md:w-[30%] h-80 bg-vibrantGreen bg-opacity-10 border border-vibrantGreen rounded-2xl pl-6 py-8 space-y-8 sm:mt-0">
+        <div className="w-full md:w-[30%] h-80 bg-vibrantGreen bg-opacity-10 border border-opacity-50 border-vibrantGreen rounded-2xl pl-6 py-8 space-y-8 sm:mt-0">
           <div className="space-y-4">
             <p className="text-gray-800 text-lg sm:text-xl mb-1">Wallet Balance</p>
             <p className="font-bold text-gray-900 text-2xl sm:text-3xl">₦500,000</p>
