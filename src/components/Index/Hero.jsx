@@ -75,7 +75,7 @@ const Hero = () => {
 
 	            </p>
 	            <LinkScroll to="features" offset={-100} spy smooth>
-	              <button className="">
+	              <button className="main-btn">
   						Get Started
 				</button>
 

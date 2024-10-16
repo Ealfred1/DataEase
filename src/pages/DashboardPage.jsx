@@ -14,8 +14,8 @@ const DashboardPage = () => {
             <p className="text-gray-500 tracking-wide mb-3">Explore your dashboard</p>
 
             <div className="absolute bottom-5 flex justify-between gap-2">
-              <button className="">Fund Wallet</button>
-              <button className="">Upgrade Account</button>
+              <button className="inline-flex h-16 animate-shimmer items-center justify-center rounded-2xl border-none bg-[linear-gradient(110deg,#00c158,45%,#7ad67f,55%,#00c158)] bg-[length:200%_100%] px-16 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-50 w-52 text-sm rounded-[4rem] px-0 whitespace-nowrap">Fund Wallet</button>
+              <button className="inline-flex h-16 animate-shimmer items-center justify-center rounded-2xl border border-vibrantGreen bg-[length:200%_100%] px-16 font-medium text-black transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-50 w-52 whitespace-nowrap bg-transparent rounded-[4rem]">Upgrade Account</button>
             </div>
           </div>
 
