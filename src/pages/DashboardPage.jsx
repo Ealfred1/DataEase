@@ -30,8 +30,8 @@ const DashboardPage = () => {
               <p className="font-semibold text-black text-opacity-90 text-lg">**** *** 3454</p>
             </div>
             <div className="">
-              <p className="text-gray text-[11px]">Your Number</p>
-              <p className="font-semibold text-black text-opacity-90 text-lg">**** *** 3454</p>
+              <p className="text-gray text-[11px]">Referral Bonus</p>
+              <p className="font-semibold text-black text-opacity-90 text-lg">150.00</p>
             </div>
           </div>
           </div>
