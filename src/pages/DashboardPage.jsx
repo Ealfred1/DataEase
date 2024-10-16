@@ -20,8 +20,8 @@ const DashboardPage = () => {
           </div>
 
           <div className="pt-10">
-          <div className="space-y-4">
-            <p className="text-gray-800 text-lg sm:text-xl mb-1">Wallet Balance</p>
+          <div className="space-y-1">
+            <p className="text-gray text-[15px]">Wallet Balance</p>
             <p className="font-bold text-gray-900 text-2xl sm:text-3xl">₦500,000</p>
           </div>
           <div className="space-y-4">
