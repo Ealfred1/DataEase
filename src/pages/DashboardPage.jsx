@@ -19,14 +19,20 @@ const DashboardPage = () => {
             </div>
           </div>
 
-          <div className="pt-10">
-          <div className="space-y-1">
+          <div className="pt-10 pr-4">
+          <div className="space-y-1 mb-5">
             <p className="text-gray text-[13px]">Main Balance</p>
             <p className="font-semibold text-black text-opacity-90 text-2xl sm:text-3xl"><span className="text-opacity-70 text-black">₦</span> 1,459.70</p>
           </div>
-          <div className="space-y-4">
-            <p className="text-gray-800 text-lg sm:text-xl">Referral Bonus</p>
-            <p className="font-bold text-gray-900 text-2xl sm:text-3xl">₦50,000</p>
+          <div className="flex gap-2 flex-col text-right">
+            <div className="">
+              <p className="text-gray text-[11px]">Your Number</p>
+              <p className="font-semibold text-black text-opacity-90 text-lg">**** *** 3454</p>
+            </div>
+            <div className="">
+              <p className="text-gray text-[11px]">Your Number</p>
+              <p className="font-semibold text-black text-opacity-90 text-lg">**** *** 3454</p>
+            </div>
           </div>
           </div>
         </div>
