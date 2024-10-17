@@ -37,17 +37,60 @@ const DashboardPage = () => {
           </div>
         </div>
 
-        {/* Wallet Balance & Referral Bonus - Right Side */}
-        <div className="w-full md:w-[30%] h-80 bg-vibrantGreen bg-opacity-10 border border-opacity-50 border-vibrantGreen rounded-2xl pl-6 py-8 space-y-8 sm:mt-0">
-          <div className="space-y-4">
-            <p className="text-gray-800 text-lg sm:text-xl mb-1">Wallet Balance</p>
-            <p className="font-bold text-gray-900 text-2xl sm:text-3xl">₦500,000</p>
-          </div>
-          <div className="space-y-4">
-            <p className="text-gray-800 text-lg sm:text-xl">Referral Bonus</p>
-            <p className="font-bold text-gray-900 text-2xl sm:text-3xl">₦50,000</p>
-          </div>
-        </div>
+        <div className="w-full md:w-[30%] h-80 bg-vibrantGreen bg-opacity-10 border border-opacity-50 border-vibrantGreen rounded-2xl pl-6 py-8 sm:mt-0">
+  <h2 className="text-gray-800 text-lg sm:text-xl mb-6">Features</h2>
+  
+  <div className="grid grid-cols-3 gap-6">
+    {/* Data */}
+    <div className="flex flex-col items-center">
+      <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-2">
+        <i className="pi pi-wifi text-white text-xl"></i>
+      </div>
+      <p className="text-gray-800 text-sm">Data</p>
+    </div>
+
+    {/* Wallet */}
+    <div className="flex flex-col items-center">
+      <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mb-2">
+        <i className="pi pi-wallet text-white text-xl"></i>
+      </div>
+      <p className="text-gray-800 text-sm">Wallet</p>
+    </div>
+
+    {/* Airtime */}
+    <div className="flex flex-col items-center">
+      <div className="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center mb-2">
+        <i className="pi pi-mobile text-white text-xl"></i>
+      </div>
+      <p className="text-gray-800 text-sm">Airtime</p>
+    </div>
+
+    {/* Electricity */}
+    <div className="flex flex-col items-center">
+      <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mb-2">
+        <i className="pi pi-bolt text-white text-xl"></i>
+      </div>
+      <p className="text-gray-800 text-sm">Electricity</p>
+    </div>
+
+    {/* Education */}
+    <div className="flex flex-col items-center">
+      <div className="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center mb-2">
+        <i className="pi pi-book text-white text-xl"></i>
+      </div>
+      <p className="text-gray-800 text-sm">Education</p>
+    </div>
+
+    {/* Bills */}
+    <div className="flex flex-col items-center">
+      <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mb-2">
+        <i className="pi pi-money-bill text-white text-xl"></i>
+      </div>
+      <p className="text-gray-800 text-sm">Bills</p>
+    </div>
+  </div>
+</div>
+
       </div>
 
       {/* Shortcuts Section */}
