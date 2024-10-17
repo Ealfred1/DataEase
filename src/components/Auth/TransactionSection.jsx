@@ -48,13 +48,13 @@ const TransactionItem = ({ transaction }) => {
       
       {/* Transaction Details */}
       <div className="flex-1 ml-4">
-        <h3 className="text-lg font-semibold text-gray-800 dark:text-white">{type}</h3>
-        <p className="text-sm text-gray-500">{format(time, 'MMM dd, h:mm a')}</p>
+        <h3 className="text-lg font-semibold text-black text-opacity-90 dark:text-white">{type}</h3>
+        <p className="text-sm text-gray">{format(time, 'MMM dd, h:mm a')}</p>
       </div>
 
       {/* Amount and Transaction Type */}
       <div className="text-right">
-        <p className="text-lg font-bold text-red-600">{amount}</p>
+        <p className="text-lg font-medium text-red-600">- {amount}</p>
         <p className="text-sm text-gray-500">{transactionType}</p>
       </div>
     </div>
