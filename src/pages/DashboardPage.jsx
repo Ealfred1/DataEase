@@ -3,7 +3,7 @@ import { TransactionSection } from '../components/'
 
 const DashboardPage = () => {
   return (
-    <div className="container mx-auto">
+    <div className="container">
       {/* Main Dashboard Sections */}
       <div className="flex flex-col md:flex-row justify-between items-center md:space-x-3 space-x-0 px-3">
         
