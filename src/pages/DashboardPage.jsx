@@ -19,12 +19,12 @@ const DashboardPage = () => {
             </div>
           </div>
 
-          <div className="pt-10 pr-4">
+          <div className="pt-10">
           <div className="space-y-1 mb-5">
             <p className="text-gray text-[13px]">Main Balance</p>
             <p className="font-semibold text-black text-opacity-90 text-2xl sm:text-3xl"><span className="text-opacity-70 text-black">₦</span> 1,459.70</p>
           </div>
-          <div className="flex gap-2 flex-col text-right">
+          <div className="flex gap-2 flex-col text-right absolute bottom-5 right-5">
             <div className="">
               <p className="text-gray text-[11px]">Your Number</p>
               <p className="font-semibold text-black text-opacity-90 text-lg">**** *** 3454</p>
