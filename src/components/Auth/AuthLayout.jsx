@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Outlet, Link, ScrollRestoration  } from 'react-router-dom'
+import { Outlet, Link } from 'react-router-dom'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
 
@@ -11,7 +11,6 @@ const AuthLayout = () => {
 	}
   return (
     <>
-      <ScrollRestoration />
       <div>
         <Navbar handleSideBarToggle={handleSideBarToggle} closed={sideBarClose} />
         <Sidebar sideBarClose={sideBarClose} handleSideBarToggle={handleSideBarToggle} />
