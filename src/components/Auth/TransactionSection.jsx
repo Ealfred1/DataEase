@@ -1,5 +1,5 @@
 import React from 'react'
-import { transactions } from '@constants/data.js'
+import { transactions } from '../../constants/data.js'
 import { format } from 'date-fns'
 
 const TransactionSection = () => {

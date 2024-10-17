@@ -1,5 +1,5 @@
 import React from 'react'
-import TransactionSection from '@components/Auth/TransactionSection'
+import { TransactionSection } from '../components/'
 
 const DashboardPage = () => {
   return (
