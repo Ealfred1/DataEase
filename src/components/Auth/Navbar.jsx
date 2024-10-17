@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import Image from '../../assets/hero.png'
+import { AuthContext } from '../../context/AuthContext';
 
 const Navbar = ({ handleSideBarToggle, closed }) => {
   const { pathname } = useLocation();
   const [display, setDisplay] = useState('')
   const navigate = useNavigate()
   const [profileMenuOpen, setProfileMenuOpen] = useState('')
+  const { logout } = useContext(AuthContext);
 
   const handleNavigate = () => {
     navigate('/search')
@@ -47,10 +49,10 @@ const Navbar = ({ handleSideBarToggle, closed }) => {
           <i className="pi pi-cog mr-2"></i>
           Settings
         </Link>
-        <Link to="/logout" className="flex items-center px-4 py-4 text-gray hover:text-white w-full hover:bg-vibrantGreen rounded-b-md hover:text-white">
+        <a onClick={} className="flex items-center px-4 py-4 text-gray hover:text-white w-full hover:bg-vibrantGreen rounded-b-md hover:text-white">
           <i className="pi pi-sign-out mr-2"></i>
           Logout
-        </Link>
+        </a>
       </div>
     )}
   </div>
