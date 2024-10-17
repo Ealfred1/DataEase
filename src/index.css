@@ -333,10 +333,11 @@ transform: translateX(0);
   height: 100%;
   padding: 40px 4px 80px 4px;
   z-index: 100;
-  overflow-y: hidden;
   overflow-x: hidden;
   box-shadow: 0 0 1px #777;
   transition: all 0.8s ease;
+
+  @apply overflow-y-auto lg:overflow-y-hidden;
 }
 
 .sidebar.close {
@@ -344,7 +345,7 @@ transform: translateX(0);
   @apply w-0 sm:w-[80px];
 }
 .sidebar:hover {
-  overflow-y: auto;
+  @apply lg:overflow-y-auto;
 }
 
 
