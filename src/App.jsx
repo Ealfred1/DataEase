@@ -6,7 +6,7 @@ import { LandingPage, LoginPage, RegisterPage, NotFound, DashboardPage } from '.
 const App = () => {
 
   return (
-    <div className="w-full h-screen">
+    <div className="w-full h-screen overflow-x-hidden">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<LandingPage />} />
