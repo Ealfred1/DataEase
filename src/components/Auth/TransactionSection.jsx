@@ -4,7 +4,7 @@ import { format } from 'date-fns'
 
 const TransactionSection = () => {
   return (
-    <div className="mt-10 px-3">
+    <div className="mt-20 px-3">
       <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Recent Transactions</h2>
       
       {/* Transaction List */}
@@ -39,11 +39,11 @@ const TransactionItem = ({ transaction }) => {
   const { icon, bgColor } = getTransactionIcon()
 
   return (
-    <div className="flex items-center justify-between p-4 bg-white dark:bg-slate-800 rounded-lg shadow-md">
+    <div className="flex items-center justify-between p-4 bg-white dark:bg-slate-800 rounded-lg shadow-md shadow-slate-100 border border-neutral-300">
       
       {/* Icon Section */}
       <div className={`w-16 h-16 flex items-center justify-center rounded-full ${bgColor}`}>
-        <i className={`${icon} text-3xl text-gray-700 dark:text-white`}></i>
+        <i className={`${icon} text-3xl text-white dark:text-white`}></i>
       </div>
       
       {/* Transaction Details */}
