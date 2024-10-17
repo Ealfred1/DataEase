@@ -97,6 +97,7 @@ const DashboardPage = () => {
       <TransactionSection />
 
     </div>
+
   )
 }
 
