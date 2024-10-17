@@ -40,8 +40,8 @@ const TransactionItem = ({ transaction }) => {
     <div className="flex items-center justify-between p-4 bg-white dark:bg-slate-800 rounded-lg shadow-md shadow-slate-100 border border-neutral-300">
       
       {/* Icon Section */}
-      <div className={`w-16 h-16 flex items-center justify-center rounded-full ${bgColor}`}>
-        <i className={`${icon} text-3xl text-white dark:text-white`}></i>
+      <div className={`w-12 h-12 lg:w-16 lg:h-16 flex items-center justify-center rounded-full ${bgColor}`}>
+        <i className={`${icon} text-xl lg:text-3xl text-white dark:text-white`}></i>
       </div>
       
       {/* Transaction Details */}
