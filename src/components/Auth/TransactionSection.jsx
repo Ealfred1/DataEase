@@ -5,7 +5,7 @@ import { format } from 'date-fns'
 const TransactionSection = () => {
   return (
     <div className="mt-20 px-3">
-      <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Recent Transactions</h2>
+      <h2 className="text-2xl font-bold text-gray dark:text-white">Recent Transactions</h2>
       
       {/* Transaction List */}
       <div className="mt-4 space-y-4">
@@ -24,15 +24,15 @@ const TransactionItem = ({ transaction }) => {
   const getTransactionIcon = () => {
     switch (type) {
       case 'Airtime':
-        return { icon: 'pi pi-phone', bgColor: 'bg-red-500' }
+        return { icon: 'pi pi-phone', bgColor: 'bg-red-500 bg-opacity-80' }
       case 'Data':
-        return { icon: 'pi pi-wifi', bgColor: 'bg-blue-500' }
+        return { icon: 'pi pi-wifi', bgColor: 'bg-blue-500 bg-opacity-80' }
       case 'Electricity':
-        return { icon: 'pi pi-bolt', bgColor: 'bg-yellow-500' }
+        return { icon: 'pi pi-bolt', bgColor: 'bg-yellow-500 bg-opacity-80' }
       case 'Cable TV':
-        return { icon: 'pi pi-tv', bgColor: 'bg-green-500' }
+        return { icon: 'pi pi-video', bgColor: 'bg-green-500 bg-opacity-80' }
       default:
-        return { icon: 'pi pi-money-bill', bgColor: 'bg-gray-500' }
+        return { icon: 'pi pi-money-bill', bgColor: 'bg-gray-500 bg-opacity-80' }
     }
   }
 
