@@ -445,7 +445,9 @@ transform: translateX(0);
   text-decoration: none;
   color: #777;
   white-space: nowrap;
-  transform: scale(0.8);
+  transform: scale(0.9);
+
+  @apply lg:scale-[0.8];
 }
 .sidebar.close .navlink2 {
   display: none;
