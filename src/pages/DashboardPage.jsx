@@ -87,7 +87,7 @@ const DashboardPage = () => {
       <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mb-2">
         <i className="pi pi-money-bill text-white text-xl"></i>
       </div>
-      <p className="text-gray-800 text-sm">Bills</p>
+      <p className="text-gray-800 text-sm">Cable</p>
     </div>
   </div>
 </div>
