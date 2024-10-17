@@ -24,15 +24,15 @@ const TransactionItem = ({ transaction }) => {
   const getTransactionIcon = () => {
     switch (type) {
       case 'Airtime':
-        return { icon: 'pi pi-phone', bgColor: 'bg-red-200' }
+        return { icon: 'pi pi-phone', bgColor: 'bg-red-500' }
       case 'Data':
-        return { icon: 'pi pi-wifi', bgColor: 'bg-blue-200' }
+        return { icon: 'pi pi-wifi', bgColor: 'bg-blue-500' }
       case 'Electricity':
-        return { icon: 'pi pi-bolt', bgColor: 'bg-yellow-200' }
+        return { icon: 'pi pi-bolt', bgColor: 'bg-yellow-500' }
       case 'Cable TV':
-        return { icon: 'pi pi-tv', bgColor: 'bg-green-200' }
+        return { icon: 'pi pi-tv', bgColor: 'bg-green-500' }
       default:
-        return { icon: 'pi pi-money-bill', bgColor: 'bg-gray-200' }
+        return { icon: 'pi pi-money-bill', bgColor: 'bg-gray-500' }
     }
   }
 

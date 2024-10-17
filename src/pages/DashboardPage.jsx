@@ -94,28 +94,11 @@ const DashboardPage = () => {
 
       </div>
 
-      {/* Shortcuts Section */}
-      <div className="mt-10 px-3">
-        <h2 className="text-2xl font-bold text-gray-900">Your Shortcuts</h2>
-      </div>
-      
-      {/* Shortcut Buttons */}
-      <div className="flex flex-wrap gap-4 mt-4 px-3">
-        <Shortcut icon="pi pi-wifi" label="Buy Data" />
-        <Shortcut icon="pi pi-phone" label="Buy Airtime" />
-        <Shortcut icon="pi pi-tv" label="Cable Subscription" />
-        <Shortcut icon="pi pi-bolt" label="Electricity" />
-        <Shortcut icon="pi pi-graduation-cap" label="Result Checker" />
-      </div>
+      <TransactionSection />
+
     </div>
   )
 }
 
-const Shortcut = ({ icon, label }) => (
-  <div className="box w-32 h-32 bg-white rounded-lg flex flex-col items-center justify-center shadow-md hover:shadow-lg transition">
-    <i className={`${icon} text-6xl text-vibrantGreen mb-2`}></i>
-    <div className="text-gray-800 text-center">{label}</div>
-  </div>
-)
 
 export default DashboardPage
