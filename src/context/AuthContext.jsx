@@ -52,13 +52,13 @@ export const AuthProvider = ({ children }) => {
           navigate('/dashboard'); // Automatically navigate to dashboard if refreshed
         }
       } else {
-        // If no tokens, redirect to login
-        navigate('/login');
+        // // If no tokens, redirect to login
+        // navigate('/login');
       }
     };
 
     checkLoginStatus();
-  }, [navigate]);
+  }, []);
 
   // Register user
   const register = async (userData) => {
@@ -97,6 +97,7 @@ export const AuthProvider = ({ children }) => {
       navigate('/dashboard'); // Redirect after successful login
     } catch (error) {
       handleError(error);
+      console.log(error)
     }
   };
 
@@ -118,8 +119,8 @@ export const AuthProvider = ({ children }) => {
       toast.error(errors.email[0]);
     } else if (errors.username) {
       toast.error(errors.username[0]);
-    } else {
-      toast.error('An error occurred.');
+    } else if (error.response.status == 401) {
+      toast.error(error.response.data.detail);
     }
   };
 

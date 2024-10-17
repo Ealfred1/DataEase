@@ -12,7 +12,6 @@ import "react-toastify/dist/ReactToastify.css"
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Router>
-      <ScrollToTop />
       <ToastContainer
           position="top-center" // Set global toast position
           autoClose={5000}
