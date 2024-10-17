@@ -4,7 +4,7 @@ import { format } from 'date-fns'
 
 const TransactionSection = () => {
   return (
-    <div className="mt-20 px-3">
+    <div className="mt-20 px-3 pb-16">
       <h2 className="text-2xl font-bold text-gray dark:text-white">Recent Transactions</h2>
       
       {/* Transaction List */}
@@ -54,8 +54,8 @@ const TransactionItem = ({ transaction }) => {
 
       {/* Amount and Transaction Type */}
       <div className="text-right">
-        <p className="text-lg font-medium text-red-600">- {amount}</p>
-        <p className="text-sm text-gray-500">{transactionType}</p>
+        <p className="text-lg font-medium text-red-500">- {amount}</p>
+        <p className="text-sm text-gray">{transactionType}</p>
       </div>
     </div>
   )
