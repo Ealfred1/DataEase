@@ -8,15 +8,14 @@ const DashboardPage = () => {
       <div className="flex flex-col md:flex-row justify-between items-center gap-3 md:space-x-3 space-x-0 px-3">
         
         {/* Welcome Section - Left Side */}
-        <div className="w-[100%] md:w-[70%] h-auto lg:h-80 bg-vibrantGreen bg-opacity-10 border border-vibrantGreen border-opacity-50 rounded-2xl px-7 pt-4 pb-5 flex gap-2 flex-col md:flex-row justify-between relative">
+        <div className="w-[100%] md:w-[70%] h-auto lg:h-80 bg-vibrantGreen bg-opacity-10 border border-vibrantGreen border-opacity-50 rounded-2xl px-7 pt-4 pb-5 flex gap-2 flex-row justify-between relative">
           <div className="pt-10">
             <p className="text-neutral-700">Hello! 👋</p>
             <h1 className="text-2xl sm:text-3xl font-semibold text-gray-700 mb-3">Eric Alfred</h1>
             <p className="text-gray-500 tracking-wide mb-3">Explore your dashboard</p>
-          <div className="space-y-1 mb-5">
-            <p className="text-gray text-[13px]">Main Balance</p>
-            <p className="font-semibold text-black text-opacity-90 text-2xl sm:text-3xl"><span className="text-opacity-70 text-black">₦</span> 1,459.70</p>
-          </div>
+            <div className="flex lg:hidden justify-between gap-2">
+              <button className="inline-flex h-14 animate-shimmer items-center justify-center rounded-2xl border-none bg-[linear-gradient(110deg,#00c158,45%,#7ad67f,55%,#00c158)] bg-[length:200%_100%] px-14 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-50 w-52 text-sm rounded-[4rem] px-0 whitespace-nowrap hover:opacity-70">Fund Wallet <i className="pi pi-wallet ml-2"></i></button>
+            </div>
             <div className="hidden absolute bottom-5 lg:flex justify-between gap-2">
               <button className="inline-flex h-14 animate-shimmer items-center justify-center rounded-2xl border-none bg-[linear-gradient(110deg,#00c158,45%,#7ad67f,55%,#00c158)] bg-[length:200%_100%] px-14 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-50 w-52 text-sm rounded-[4rem] px-0 whitespace-nowrap hover:opacity-70">Fund Wallet <i className="pi pi-wallet ml-2"></i></button>
               <button className="inline-flex h-14 animate-shimmer items-center justify-center rounded-2xl border border-vibrantGreen hover:bg-[linear-gradient(110deg,#00c158,45%,#7ad67f,55%,#00c158)] hover:text-white  bg-[length:200%_100%] px-14 font-medium text-black transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-50 w-52 whitespace-nowrap bg-transparent rounded-[4rem]">Upgrade Account <i className="pi pi-arrow-up ml-2"></i></button>
@@ -25,24 +24,21 @@ const DashboardPage = () => {
 
           <div className="pt-10">
           <div className="space-y-1 mb-5">
-            <p className="text-gray text-[13px]">Main Balance</p>
-            <p className="font-semibold text-black text-opacity-90 text-2xl sm:text-3xl"><span className="text-opacity-70 text-black">₦</span> 1,459.70</p>
+            <p className="text-gray text-[12px] lg:text-[13px]">Main Balance</p>
+            <p className="font-semibold text-black text-opacity-90 text-lg sm:text-3xl"><span className="text-opacity-70 text-black whitespace-nowrap">₦</span> 1,459.70</p>
           </div>
           <div className="flex gap-2 flex-col text-right absolute bottom-5 right-5">
             <div className="">
               <p className="text-gray text-[11px]">Your Number</p>
-              <p className="font-semibold text-black text-opacity-90 text-lg">**** *** 3454</p>
+              <p className="font-semibold text-black text-opacity-90 text-[12px] lg:text-lg">**** *** 3454</p>
             </div>
             <div className="">
               <p className="text-gray text-[11px]">Referral Bonus</p>
-              <p className="font-semibold text-black text-opacity-90 text-lg">₦ 150.00</p>
+              <p className="font-semibold text-black text-opacity-90 text-[12px] lg:text-lg">₦ 150.00</p>
             </div>
           </div>
           </div>
 
-          <div className="flex lg:hidden justify-between gap-2">
-              <button className="inline-flex h-14 animate-shimmer items-center justify-center rounded-2xl border-none bg-[linear-gradient(110deg,#00c158,45%,#7ad67f,55%,#00c158)] bg-[length:200%_100%] px-14 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-50 w-52 text-sm rounded-[4rem] px-0 whitespace-nowrap hover:opacity-70">Fund Wallet <i className="pi pi-wallet ml-2"></i></button>
-            </div>
         </div>
 
         <div className="w-full md:w-[40%] h-80 bg-vibrantGreen bg-opacity-10
