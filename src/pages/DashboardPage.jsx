@@ -46,9 +46,9 @@ const DashboardPage = () => {
         </div>
 
         <div className="w-full md:w-[40%] h-80 bg-vibrantGreen bg-opacity-10
-        border border-opacity-50 border-vibrantGreen rounded-2xl lg:pl-6 py-8
+        border border-opacity-50 border-vibrantGreen rounded-2xl py-8
         sm:mt-0">
-  <h2 className="text-gray-800 text-center lg:text-left text-lg sm:text-xl mb-6">Features</h2>
+  <h2 className="text-gray-800 text-center px-4 lg:text-left text-lg sm:text-xl mb-6">Features</h2>
   
   <div className="grid grid-cols-3 gap-6">
     {/* Data */}
