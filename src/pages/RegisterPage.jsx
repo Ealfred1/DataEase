@@ -214,7 +214,7 @@ const RegisterPage = () => {
                     >
                       <InputOTPGroup className="space-x-6 scale-[1.5]">
                       	<InputOTPGroup>
-                        	<InputOTPSlot index={0} />
+                        	<InputOTPSlot index={0} autoFocus={true} />
                         </InputOTPGroup>
                         <InputOTPGroup>
                         	<InputOTPSlot index={1} />
@@ -230,7 +230,7 @@ const RegisterPage = () => {
                   </div>
                   <button
                     onClick={handleVerifyOtp}
-                    className="inline-flex h-16 animate-shimmer items-center justify-center rounded-2xl border-none bg-[linear-gradient(110deg,#00c158,45%,#7ad67f,55%,#00c158)] body-2 bg-[length:200%_100%] px-16 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+                    className="inline-flex h-16 animate-shimmer items-center justify-center rounded-2xl border-none bg-[linear-gradient(110deg,#00c158,45%,#7ad67f,55%,#00c158)] body-2 bg-[length:200%_100%] px-16 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-50 mt-4"
                     disabled={verifying} // Disable button while verifying OTP
                   >
                     {verifying ? 'Verifying...' : 'Verify OTP'}
