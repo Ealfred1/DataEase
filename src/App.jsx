@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom';
 import { Layout, RequireAuth, AuthLayout } from './components'
-import { LandingPage, LoginPage, RegisterPage, NotFound, DashboardPage } from './pages'
+import { LandingPage, LoginPage, RegisterPage, NotFound, DashboardPage, SettingsPage } from './pages'
 
 const App = () => {
 
@@ -18,6 +18,7 @@ const App = () => {
         <Route element={<RequireAuth />}>
           <Route element={<AuthLayout />}>
             <Route path='/dashboard' element={<DashboardPage />} />
+            <Route path='/settings' element={<SettingsPage />} />
           </Route>
         </Route>
       </Routes>
