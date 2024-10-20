@@ -80,7 +80,7 @@ export const AuthProvider = ({ children }) => {
       setOtpVerified(true);
       toast.success('Verification Successful!');
     } catch (error) {
-      toast.error(error.response?.data?.message || 'OTP verification failed.');
+      toast.error(error.response?.data?.error || 'OTP verification failed.');
     }
   };
 
@@ -100,6 +100,16 @@ export const AuthProvider = ({ children }) => {
       console.log(error)
     }
   };
+
+    // Resend OTP
+    const resendOtp = async (email) => {
+      try {
+        await axiosInstance.post('/users/resend-otp/', { email });
+        toast.success('OTP resent to your email.');
+      } catch (error) {
+        toast.error(error.response?.data?.message || 'Failed to resend OTP.');
+      }
+    };
 
   // Log out user and clear tokens
   const logout = () => {
@@ -135,6 +145,7 @@ export const AuthProvider = ({ children }) => {
         verifyOtp,
         loginUser,
         refreshAccessToken,
+        resendOtp,
         logout,
       }}
     >
