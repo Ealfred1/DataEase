@@ -38,12 +38,12 @@ const SettingsPage = () => {
   };
 
   return (
-    <div className="p-5 max-w-6xl mx-auto bg-vibrantGreen bg-opacity-10 border border-vibrantGreen border-opacity-50 rounded-md">
+    <div className="p-5 max-w-7xl mx-auto bg-vibrantGreen bg-opacity-10 border border-vibrantGreen border-opacity-50 rounded-md">
       <h2 className="text-2xl font-semibold mb-5 text-gray-800">Settings</h2>
       
-      <TabView className="shadow-sm rounded-lg">
+      <TabView className="tab-view-custom">
         {/* General Tab */}
-        <TabPanel header="General" leftIcon="pi pi-user">
+        <TabPanel header="General" leftIcon="pi pi-user flex">
           <form onSubmit={handleGeneralSubmit} className="space-y-5">
             <div className="mb-3">
               <label htmlFor="first_name" className="block text-gray-600 font-medium">First Name</label>
@@ -70,7 +70,7 @@ const SettingsPage = () => {
         </TabPanel>
 
         {/* Change Password Tab */}
-        <TabPanel header="Change Password" leftIcon="pi pi-lock">
+        <TabPanel header="Change Password" leftIcon="pi pi-lock" className="flex">
           <form onSubmit={handlePasswordSubmit} className="space-y-5">
             <div className="mb-3">
               <label htmlFor="old_password" className="block text-gray-600 font-medium">Old Password</label>
