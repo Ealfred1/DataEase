@@ -52,13 +52,13 @@ export const AuthProvider = ({ children }) => {
           navigate('/dashboard'); // Automatically navigate to dashboard if refreshed
         }
       } else {
-        // If no tokens, redirect to login
-        navigate('/login');
+        // // If no tokens, redirect to login
+        // navigate('/login');
       }
     };
 
     checkLoginStatus();
-  }, [navigate]);
+  }, []);
 
   // Register user
   const register = async (userData) => {
@@ -80,7 +80,7 @@ export const AuthProvider = ({ children }) => {
       setOtpVerified(true);
       toast.success('Verification Successful!');
     } catch (error) {
-      toast.error(error.response?.data?.message || 'OTP verification failed.');
+      toast.error(error.response?.data?.error || 'OTP verification failed.');
     }
   };
 
@@ -97,8 +97,19 @@ export const AuthProvider = ({ children }) => {
       navigate('/dashboard'); // Redirect after successful login
     } catch (error) {
       handleError(error);
+      console.log(error)
     }
   };
+
+    // Resend OTP
+    const resendOtp = async (email) => {
+      try {
+        await axiosInstance.post('/users/resend-otp/', { email });
+        toast.success('OTP resent to your email.');
+      } catch (error) {
+        toast.error(error.response?.data?.message || 'Failed to resend OTP.');
+      }
+    };
 
   // Log out user and clear tokens
   const logout = () => {
@@ -118,8 +129,8 @@ export const AuthProvider = ({ children }) => {
       toast.error(errors.email[0]);
     } else if (errors.username) {
       toast.error(errors.username[0]);
-    } else {
-      toast.error('An error occurred.');
+    } else if (error.response.status == 401) {
+      toast.error(error.response.data.detail);
     }
   };
 
@@ -134,6 +145,7 @@ export const AuthProvider = ({ children }) => {
         verifyOtp,
         loginUser,
         refreshAccessToken,
+        resendOtp,
         logout,
       }}
     >

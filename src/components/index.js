@@ -4,6 +4,7 @@ import DarkModeToggle from './DarkModeToggle'
 import Hero from './Index/Hero'
 import RequireAuth from './RequireAuth'
 import AuthLayout from './Auth/AuthLayout'
+import TransactionSection from './Auth/TransactionSection'
 
 export {
 	ScrollToTop,
@@ -11,5 +12,6 @@ export {
 	DarkModeToggle,
 	Hero,
 	RequireAuth,
-	AuthLayout
+	AuthLayout,
+	TransactionSection
 }
