@@ -4,7 +4,7 @@ import { format } from 'date-fns'
 
 const TransactionSection = () => {
   return (
-    <div className="mt-20 px-3 pb-16">
+    <div className="mt-5 px-3 pb-16">
       <h2 className="text-2xl font-bold text-gray dark:text-white">Recent Transactions</h2>
       
       <div className="mt-4 space-y-4">

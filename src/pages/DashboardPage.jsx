@@ -35,7 +35,7 @@ const DashboardPage = () => {
         
         {/* Welcome Section - Left Side */}
         <div className="w-[100%] md:w-[70%] h-auto lg:h-80 bg-vibrantGreen bg-opacity-10 border border-vibrantGreen border-opacity-50 rounded-2xl px-7 pt-4 pb-5 flex gap-2 flex-row justify-between relative">
-          <div className="pt-10">
+          <div className="pt-5">
             <p className="text-neutral-700">Hello! 👋</p>
             <h1 className="text-2xl sm:text-3xl font-semibold text-gray-700 mb-3">{user.first_name} {user.last_name}</h1>
             <p className="text-gray-500 tracking-wide mb-3">Explore your dashboard</p>
@@ -51,7 +51,7 @@ const DashboardPage = () => {
           <div className="pt-10">
             <div className="space-y-1 mb-5">
               <p className="text-gray text-[12px] lg:text-[13px]">Main Balance</p>
-              <p className="font-semibold text-black text-opacity-90 text-lg sm:text-3xl"><span className="text-opacity-70 text-black whitespace-nowrap">₦</span> {user.balance}</p>
+              <p className="font-semibold text-black  text-right text-opacity-90 text-lg sm:text-3xl"><span className="text-opacity-70 text-black whitespace-nowrap">₦</span> {user.balance}</p>
             </div>
             <div className="flex gap-2 flex-col text-right absolute bottom-5 right-5">
               <div className="">
@@ -67,8 +67,8 @@ const DashboardPage = () => {
         </div>
 
         {/* Features Section */}
-        <div className="w-full md:w-[40%] h-80 bg-vibrantGreen bg-opacity-10 border border-opacity-50 border-vibrantGreen rounded-2xl py-8 sm:mt-0">
-          <h2 className="text-gray-800 text-center px-4 lg:text-left text-lg sm:text-xl mb-6">Features</h2>
+        <div className="w-full md:w-[40%] h-max bg-vibrantGreen bg-opacity-10 border border-opacity-50 border-vibrantGreen rounded-2xl py-8 sm:mt-0">
+          {/* <h2 className="text-gray-800 text-left font-bold px-4 lg:text-left text-lg sm:text-xl mb-6">Features</h2> */}
           
           <div className="grid grid-cols-3 gap-6">
             {/* Data */}
@@ -122,7 +122,7 @@ const DashboardPage = () => {
         </div>
       </div>
 
-      <TransactionSection />
+      <TransactionSection/>
     </div>
   );
 };
