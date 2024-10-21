@@ -173,7 +173,7 @@ const SideBar = ({ sideBarClose, handleSideBarToggle }) => {
               </div>
               <div className="pr-[1.5px]">
                 <h1 className="text-sm font-bold text-black text-opacity-80 text-left">Eric Alfred</h1>
-                <p className="text-sm"></p>
+                <p className="text-sm">alfrederic371@gmail.com</p>
               </div>
             </div>
           </div>

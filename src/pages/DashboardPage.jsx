@@ -67,8 +67,8 @@ const DashboardPage = () => {
         </div>
 
         {/* Features Section */}
-        <div className="w-full md:w-[40%] h-max bg-vibrantGreen bg-opacity-10 border border-opacity-50 border-vibrantGreen rounded-2xl py-8 sm:mt-0">
-          {/* <h2 className="text-gray-800 text-left font-bold px-4 lg:text-left text-lg sm:text-xl mb-6">Features</h2> */}
+        <div className="w-full md:w-[40%] sm:h-80 bg-vibrantGreen bg-opacity-10 border border-opacity-50 border-vibrantGreen rounded-2xl py-8 sm:mt-0">
+          <h2 className="text-gray-800 text-left font-bold sm:block hidden px-4 lg:text-left text-lg sm:text-xl mb-6">Features</h2>
           
           <div className="grid grid-cols-3 gap-6">
             {/* Data */}
