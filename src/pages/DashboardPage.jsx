@@ -35,7 +35,7 @@ const DashboardPage = () => {
         <div className="w-[100%] md:w-[70%] h-auto lg:h-80 bg-vibrantGreen bg-opacity-10 border border-vibrantGreen border-opacity-50 rounded-2xl px-7 pt-4 pb-5 flex gap-2 flex-row justify-between relative">
           <div className="pt-5">
             <p className="text-neutral-700">Hello! 👋</p>
-            <h1 className="text-2xl sm:text-3xl font-semibold text-gray-700 mb-3">{user?.first_name} {user?.last_name}</h1>
+            <h1 className="text-2xl sm:text-3xl font-semibold text-gray-700 mb-3">{user.first_name} {user.last_name}</h1>
             <p className="text-gray-500 tracking-wide mb-3">Explore your dashboard</p>
             <div className="flex lg:hidden justify-between gap-2">
               <button className="inline-flex h-14 animate-shimmer items-center justify-center rounded-2xl border-none bg-[linear-gradient(110deg,#00c158,45%,#7ad67f,55%,#00c158)] bg-[length:200%_100%] px-14 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-50 w-52 text-sm rounded-[4rem] px-0 whitespace-nowrap hover:opacity-70">Fund Wallet <i className="pi pi-wallet ml-2"></i></button>
