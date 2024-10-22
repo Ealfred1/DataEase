@@ -4,7 +4,7 @@ import 'boxicons/css/boxicons.min.css';
 export const Plans = () => {
   return (
     <div className='mt-10'>
-        <div>
+        <div className='text-center sm:text-left'>
         <h1 className=' text-3xl font-semibold'>
             Choose your plan
         </h1>
@@ -14,10 +14,10 @@ export const Plans = () => {
         <div className='w-full grid grid-cols-1 gap-6 place-items-center  md:grid-cols-3 mt-10 mb-10'>
             <div className='w-96 shadow-spread p-5 rounded-md bg-white h-max'>
                 <div className='text-md font-semibold'>
-                <p><i class='bx bxs-star text-xl text-green-700' ></i> Standard Plan</p>
+                <p><i class='bx bxs-star  text-green-700' ></i> Standard Plan</p>
                 </div>
                 <div className='mt-7 flex items-baseline'>
-                    <h1 className='text-3xl font-bold'>₦ 4000</h1><p className='text-gray ml-1'>/ lifetime</p>
+                    <h1 className='text-3xl font-bold'>₦ 4,000</h1><p className='text-gray ml-1'>/ lifetime</p>
                 </div>
                 <div className='mt-10'>
                     <p><i class="bx bxs-diamond p-2 text-vibrantGreen"></i>2% off Data purchase</p>
@@ -35,7 +35,7 @@ export const Plans = () => {
                 <p><i class="bx bxs-trophy text-purple-800"></i> Plus Plan</p>
                 </div>
                 <div className='mt-7 flex items-baseline'>
-                    <h1 className='text-3xl font-bold'>₦ 9000</h1><p className='text-gray ml-1'>/ lifetime</p>
+                    <h1 className='text-3xl font-bold'>₦ 9,000</h1><p className='text-gray ml-1'>/ lifetime</p>
                 </div>
                 <div className='mt-10'>
                     <p><i class="bx bxs-diamond p-2 text-vibrantGreen"></i>5% off Data purchase</p>

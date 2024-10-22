@@ -7,6 +7,7 @@ import AuthLayout from './Auth/AuthLayout'
 import AfterHero from './Index/AfterHero'
 import TransactionSection from './Auth/TransactionSection'
 import { Plans  } from './Index/Plans'
+import FooterBase from './Index/FooterBase'
 
 export {
 	ScrollToTop,
@@ -17,5 +18,6 @@ export {
 	RequireAuth,
 	AuthLayout,
 	TransactionSection,
-	Plans
+	Plans,
+	FooterBase,
 }

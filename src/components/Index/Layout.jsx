@@ -1,6 +1,6 @@
 import { Outlet, Link } from 'react-router-dom'
 import Navbar from './Navbar'
-import Footer from './Footer'
+// import Footer from './Footer'
 
 const Layout = () => {
 	return (
@@ -10,7 +10,7 @@ const Layout = () => {
 		        <div className="max-w-9xl mx-auto ">
 		          <Outlet />
 		        </div>
-	        <Footer />
+	        {/* <Footer /> */}
       	</div>
 		</section>
 	)
