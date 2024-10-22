@@ -3,7 +3,7 @@ import 'boxicons/css/boxicons.min.css';
 
 export const Plans = () => {
   return (
-    <div className='mt-10'>
+    <div className='mt-14'>
         <div className='text-center sm:text-left'>
         <h1 className=' text-3xl font-semibold'>
             Choose your plan

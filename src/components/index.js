@@ -9,6 +9,7 @@ import TransactionSection from './Auth/TransactionSection'
 import { Plans  } from './Index/Plans'
 import FooterBase from './Index/FooterBase'
 import { DefaultAccordion } from './Index/DefaultAccordion'
+import Service from './Index/Service'
 
 export {
 	ScrollToTop,
@@ -22,4 +23,5 @@ export {
 	Plans,
 	FooterBase,
 	DefaultAccordion,
+	Service,
 }
