@@ -35,9 +35,6 @@ const FooterBase = () => {
 			{/* Additional Info */}
 			<div className="mt-4">
 			  <a href="mailto:dataease247@gmail.com" className="text-md font-medium text-gray-600">Email: dataease247@gmail.com</a>
-			  <p className="text-md font-medium text-gray-600">
-				Phone: +2349036105384
-			  </p>
 			</div>
 		  </div>
 		</div>
