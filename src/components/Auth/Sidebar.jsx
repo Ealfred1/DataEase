@@ -1,8 +1,10 @@
 import { Link, useLocation } from 'react-router-dom'
 import Image from '../../assets/hero.png'
+import { useContext } from 'react'
+import { DashboardContext } from '@/context/DashboardContext'
 
 const SideBar = ({ sideBarClose, handleSideBarToggle }) => {
-  
+  const {user} = useContext(DashboardContext)
   const location = useLocation()
   const isActive = (path) => {
     return location.pathname === path ? 'ring ring-2 ring-vibrantGreen text-white' : 'text-white'
@@ -172,8 +174,8 @@ const SideBar = ({ sideBarClose, handleSideBarToggle }) => {
                 <img src={Image} alt="" className="" />
               </div>
               <div className="pr-[1.5px]">
-                <h1 className="text-sm font-bold text-black text-opacity-80 text-left">Eric Alfred</h1>
-                <p className="text-sm">alfrederic371@gmail.com</p>
+                <h1 className="text-sm font-bold text-black text-opacity-80 text-left capitalize">{user?.first_name} {user?.last_name}</h1>
+                <p className="text-sm">{user?.email}</p>
               </div>
             </div>
           </div>

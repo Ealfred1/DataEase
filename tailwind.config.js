@@ -99,7 +99,8 @@ module.exports = {
   			'200': '0px 4px 4px rgba(0, 0, 0, 0.25), 0px 16px 24px rgba(0, 0, 0, 0.25), inset 0px 4px 10px #49d793',
   			'300': '0px 4px 4px rgba(0, 0, 0, 0.25), 0px 16px 24px rgba(0, 0, 0, 0.25), inset 0px 3px 6px #00a93b',
   			'400': 'inset 0px 2px 4px 0 rgba(255, 255, 255, 0.05)',
-  			'500': '0px 16px 24px rgba(0, 0, 0, 0.25), 0px -14px 48px rgba(40, 51, 111, 0.7)'
+  			'500': '0px 16px 24px rgba(0, 0, 0, 0.25), 0px -14px 48px rgba(40, 51, 111, 0.7)',
+			'spread': 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;',
   		},
   		fontFamily: {
   			inter: ["Inter", "sans-serif"],
