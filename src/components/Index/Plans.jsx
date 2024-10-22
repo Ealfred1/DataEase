@@ -9,7 +9,7 @@ export const Plans = () => {
             Choose your plan
         </h1>
         <p className='mt-2 font-semibold'><i class='bx bxs-rocket text-vibrantGreen'></i> Enjor more benefits than a normal user</p>
-        <p className='mt-3 text-gray'>Get the right plan for your business, personal user or <br />retail</p>
+        <p className='mt-3 text-gray'>Get the right plan for your business, personal use or <br />retail</p>
         </div>
         <div className='w-full grid grid-cols-1 gap-6 place-items-center  md:grid-cols-3 mt-10 mb-10'>
             <div className='w-96 shadow-spread p-5 rounded-md bg-white h-max'>
