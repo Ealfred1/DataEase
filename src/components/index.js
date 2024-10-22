@@ -8,6 +8,7 @@ import AfterHero from './Index/AfterHero'
 import TransactionSection from './Auth/TransactionSection'
 import { Plans  } from './Index/Plans'
 import FooterBase from './Index/FooterBase'
+import { DefaultAccordion } from './Index/DefaultAccordion'
 
 export {
 	ScrollToTop,
@@ -20,4 +21,5 @@ export {
 	TransactionSection,
 	Plans,
 	FooterBase,
+	DefaultAccordion,
 }
