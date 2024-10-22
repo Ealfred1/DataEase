@@ -4,6 +4,7 @@ import DarkModeToggle from './DarkModeToggle'
 import Hero from './Index/Hero'
 import RequireAuth from './RequireAuth'
 import AuthLayout from './Auth/AuthLayout'
+import AfterHero from './Index/AfterHero'
 import TransactionSection from './Auth/TransactionSection'
 
 export {
@@ -11,6 +12,7 @@ export {
 	Layout,
 	DarkModeToggle,
 	Hero,
+	AfterHero,
 	RequireAuth,
 	AuthLayout,
 	TransactionSection

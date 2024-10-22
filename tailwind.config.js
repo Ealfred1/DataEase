@@ -158,7 +158,10 @@ module.exports = {
   			'300': '0 0 300px',
   			'320': '1px 0 320px',
   			'540': '0 0 540px'
-  		}
+  		},
+		width: {
+			'98':'98%'
+		}
   	}
   },
   plugins: [addVariablesForColors, require("tailwindcss-animate")], // Custom plugin

@@ -40,7 +40,7 @@ const Hero = () => {
 	  }, []);
 
 	return (
-		<section className="relative pt-60 pb-40 max-lg:pt-52 max-lg:pb-36 max-md:pt-36 max-md:pb-32 mb-[200rem]">
+		<section className="relative pt-60 pb-40 max-lg:pt-52 max-lg:pb-36 max-md:pt-36 max-md:pb-32 nmb-[200rem] z-1">
 		{/* Background 3D balls */} 
         <div className="scale-[0.7]   lg:scale-[0.9] absolute inset-0 -z-10">
           <div  
@@ -82,7 +82,7 @@ const Hero = () => {
 	            </LinkScroll>
 	          </div>
 
-	          <div className="absolute -top-32 left-[calc(50%-340px)] w-[1230px] pointer-events-none hero-img_res">
+	          <div className="absolute -top-32 left-[calc(50%-340px)] w-[1230px] pointer-events-none hero-img_res lg:block hidden">
 	            <img
 	              src={Img}
 	              className="size-1230 scale-[0.892] lg:scale-[0.534]  max-lg:h-auto object-cover"
