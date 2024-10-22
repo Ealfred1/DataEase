@@ -26,8 +26,6 @@ const DashboardPage = () => {
     }
   }, [user, navigate]);
 
-  if (loading) return <div>Loading...</div>;
-
   return (
     <div className="px-1 w-full lg:pr-4">
       {/* Main Dashboard Sections */}
