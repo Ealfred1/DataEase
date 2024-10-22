@@ -22,7 +22,8 @@ export const Plans = () => {
                 <div className='mt-10'>
                     <p><i class="bx bxs-diamond p-2 text-vibrantGreen"></i>2% off Data purchase</p>
                     <p><i class="bx bxs-spa p-2 text-yellow-500"></i>2% off Airtime purchase</p>
-                    <p><i class="bx bxs-shield-alt-2 p-2 text-red-600"></i>2% Cable and Electricity purchase</p>
+                    <p><i class="bx bxs-shield-alt-2 p-2 text-red-600"></i>2% off Cable and Electricity purchase</p>
+                    {/* <h1>hello</h1> */}
                 </div>
                 <div className='mt-12 justify-center items-center flex'>
                     <button className='h-14 w-full bg-white border-2 font-semibold text-vibrantGreen border-vibrantGreen rounded-md'>
@@ -40,7 +41,7 @@ export const Plans = () => {
                 <div className='mt-10'>
                     <p><i class="bx bxs-diamond p-2 text-vibrantGreen"></i>5% off Data purchase</p>
                     <p><i class="bx bxs-spa p-2 text-yellow-500"></i>5% off Airtime purchase</p>
-                    <p><i class="bx bxs-shield-alt-2 p-2 text-red-600"></i>5% Cable and Electricity purchase</p>
+                    <p><i class="bx bxs-shield-alt-2 p-2 text-red-600"></i>5% off Cable and Electricity purchase</p>
                 </div>
                 <div className='mt-12 justify-center items-center flex'>
                     <button className='h-14 w-full bg-vibrantGreen text-white font-semibold rounded-md'>
@@ -58,7 +59,7 @@ export const Plans = () => {
                 <div className='mt-10'>
                     <p><i class="bx bxs-diamond p-2 text-vibrantGreen"></i>7% off Data purchase</p>
                     <p><i class="bx bxs-spa p-2 text-yellow-500"></i>7% off Airtime purchase</p>
-                    <p><i class="bx bxs-shield-alt-2 p-2 text-red-600"></i>7% Cable and Electricity purchase</p>
+                    <p><i class="bx bxs-shield-alt-2 p-2 text-red-600"></i>7% off Cable and Electricity purchase</p>
                 </div>
                 <div className='mt-12 justify-center items-center flex'>
                     <button className='h-14 w-full bg-white border-2 font-semibold text-vibrantGreen border-vibrantGreen rounded-md'>
