@@ -49,12 +49,14 @@ const DashboardPage = () => {
           <div className="pt-10">
             <div className="space-y-1 mb-5">
               <p className="text-gray text-[12px] lg:text-[13px]">Main Balance</p>
-              <p className="font-semibold text-black  text-right text-opacity-90 text-lg sm:text-3xl"><span className="text-opacity-70 text-black whitespace-nowrap">₦</span> {user.balance}</p>
+              <p className="font-semibold text-black  text-right text-opacity-90 text-lg sm:text-3xl"><span className="text-opacity-70 text-black whitespace-nowrap">₦</span> {user?.balance}</p>
             </div>
             <div className="flex gap-2 flex-col text-right absolute bottom-5 right-5">
               <div className="">
                 <p className="text-gray text-[11px]">Your Number</p>
-                <p className="font-semibold text-black text-opacity-90 text-[12px] lg:text-lg">**** *** {(user.phone_number).slice(-4)}</p>
+                <p className="font-semibold text-black text-opacity-90 text-[12px] lg:text-lg">
+                  **** *** {user?.phone_number ? user.phone_number.slice(-4) : 'N/A'}
+                </p>
               </div>
               <div className="">
                 <p className="text-gray text-[11px]">Referral Bonus</p>
