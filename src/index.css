@@ -669,3 +669,25 @@ transform: translateX(0);
     @apply bg-background text-foreground;
   }
 }
+
+.tab-view-custom .p-tabview-nav {
+  display: flex;
+  justify-content: flex-start; /* Align tabs to the left */
+}
+
+.tab-view-custom .p-tabview-nav .p-tabview-nav-link {
+  margin: 0 10px; /* Space between tabs */
+  padding: 10px 15px; /* Adjust padding for a button-like appearance */
+  border: 1px solid transparent; /* Default border */
+  border-radius: 4px; /* Round corners */
+  transition: background-color 0.3s, border-color 0.3s; /* Smooth transition */
+}
+
+.tab-view-custom .p-tabview-nav .p-tabview-nav-link.p-highlight {
+  background-color: #f0f0f0; /* Highlight color when tab is active */
+  border-color: #d1d5db; /* Active tab border color */
+}
+
+.tab-view-custom .p-tabview-nav .p-tabview-nav-link:hover {
+  background-color: #e5e5e5; /* Hover effect */
+}

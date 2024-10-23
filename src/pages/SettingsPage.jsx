@@ -38,60 +38,115 @@ const SettingsPage = () => {
   };
 
   return (
-    <div className="p-5">
-      <h2 className="text-2xl text-vibrantGreen font-semibold mb-5">Settings</h2>
+    <div className="p-5 max-w-7xl mx-auto bg-vibrantGreen bg-opacity-10 border border-vibrantGreen border-opacity-50 rounded-md">
+      <h2 className="text-2xl font-semibold mb-5 text-gray-800">Settings</h2>
       
-      <TabView>
+      <TabView className="tab-view-custom">
         {/* General Tab */}
-        <TabPanel header="General" leftIcon="pi pi-user">
-          <form onSubmit={handleGeneralSubmit}>
+        <TabPanel header="General" leftIcon="pi pi-user flex">
+          <form onSubmit={handleGeneralSubmit} className="space-y-5">
             <div className="mb-3">
-              <label htmlFor="first_name" className="block text-gray-600 mb-1">First Name</label>
-              <InputText id="first_name" value={generalInfo.first_name} onChange={(e) => setGeneralInfo({ ...generalInfo, first_name: e.target.value })} />
+              <label htmlFor="first_name" className="block text-gray-600 font-medium">First Name</label>
+              <InputText 
+                id="first_name" 
+                className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 shadow-sm"
+                value={generalInfo.first_name} 
+                onChange={(e) => setGeneralInfo({ ...generalInfo, first_name: e.target.value })} 
+              />
             </div>
             <div className="mb-3">
-              <label htmlFor="last_name" className="block text-gray-600 mb-1">Last Name</label>
-              <InputText id="last_name" value={generalInfo.last_name} onChange={(e) => setGeneralInfo({ ...generalInfo, last_name: e.target.value })} />
+              <label htmlFor="last_name" className="block text-gray-600 font-medium">Last Name</label>
+              <InputText 
+                id="last_name" 
+                className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 shadow-sm"
+                value={generalInfo.last_name} 
+                onChange={(e) => setGeneralInfo({ ...generalInfo, last_name: e.target.value })} 
+              />
             </div>
-            <Button label="Save Changes" icon="pi pi-save" className="p-button-success" type="submit" />
+            <div className="flex justify-end">
+              <Button label="Save Changes" icon="pi pi-save" className="p-button-success px-5 py-2 text-sm" type="submit" />
+            </div>
           </form>
         </TabPanel>
 
         {/* Change Password Tab */}
-        <TabPanel header="Change Password" leftIcon="pi pi-lock">
-          <form onSubmit={handlePasswordSubmit}>
+        <TabPanel header="Change Password" leftIcon="pi pi-lock" className="flex">
+          <form onSubmit={handlePasswordSubmit} className="space-y-5">
             <div className="mb-3">
-              <label htmlFor="old_password" className="block text-gray-600 mb-1">Old Password</label>
-              <Password id="old_password" value={passwordData.old_password} onChange={(e) => setPasswordData({ ...passwordData, old_password: e.target.value })} toggleMask />
+              <label htmlFor="old_password" className="block text-gray-600 font-medium">Old Password</label>
+              <Password 
+                id="old_password" 
+                className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 shadow-sm"
+                value={passwordData.old_password} 
+                onChange={(e) => setPasswordData({ ...passwordData, old_password: e.target.value })} 
+                toggleMask 
+              />
             </div>
             <div className="mb-3">
-              <label htmlFor="new_password" className="block text-gray-600 mb-1">New Password</label>
-              <Password id="new_password" value={passwordData.new_password} onChange={(e) => setPasswordData({ ...passwordData, new_password: e.target.value })} toggleMask />
+              <label htmlFor="new_password" className="block text-gray-600 font-medium">New Password</label>
+              <Password 
+                id="new_password" 
+                className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 shadow-sm"
+                value={passwordData.new_password} 
+                onChange={(e) => setPasswordData({ ...passwordData, new_password: e.target.value })} 
+                toggleMask 
+              />
             </div>
             <div className="mb-3">
-              <label htmlFor="confirm_password" className="block text-gray-600 mb-1">Confirm New Password</label>
-              <Password id="confirm_password" value={passwordData.confirm_password} onChange={(e) => setPasswordData({ ...passwordData, confirm_password: e.target.value })} toggleMask />
+              <label htmlFor="confirm_password" className="block text-gray-600 font-medium">Confirm New Password</label>
+              <Password 
+                id="confirm_password" 
+                className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 shadow-sm"
+                value={passwordData.confirm_password} 
+                onChange={(e) => setPasswordData({ ...passwordData, confirm_password: e.target.value })} 
+                toggleMask 
+              />
             </div>
-            <Button label="Change Password" icon="pi pi-save" className="p-button-success" type="submit" />
+            <div className="flex justify-end">
+              <Button label="Change Password" icon="pi pi-save" className="p-button-success px-5 py-2 text-sm" type="submit" />
+            </div>
           </form>
         </TabPanel>
 
         {/* Change PIN Tab */}
         <TabPanel header="Change PIN" leftIcon="pi pi-key">
-          <form onSubmit={handlePinSubmit}>
+          <form onSubmit={handlePinSubmit} className="space-y-5">
             <div className="mb-3">
-              <label htmlFor="old_pin" className="block text-gray-600 mb-1">Old PIN</label>
-              <Password id="old_pin" value={pinData.old_pin} onChange={(e) => setPinData({ ...pinData, old_pin: e.target.value })} toggleMask feedback={false} />
+              <label htmlFor="old_pin" className="block text-gray-600 font-medium">Old PIN</label>
+              <Password 
+                id="old_pin" 
+                className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 shadow-sm"
+                value={pinData.old_pin} 
+                onChange={(e) => setPinData({ ...pinData, old_pin: e.target.value })} 
+                toggleMask 
+                feedback={false} 
+              />
             </div>
             <div className="mb-3">
-              <label htmlFor="new_pin" className="block text-gray-600 mb-1">New PIN</label>
-              <Password id="new_pin" value={pinData.new_pin} onChange={(e) => setPinData({ ...pinData, new_pin: e.target.value })} toggleMask feedback={false} />
+              <label htmlFor="new_pin" className="block text-gray-600 font-medium">New PIN</label>
+              <Password 
+                id="new_pin" 
+                className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 shadow-sm"
+                value={pinData.new_pin} 
+                onChange={(e) => setPinData({ ...pinData, new_pin: e.target.value })} 
+                toggleMask 
+                feedback={false} 
+              />
             </div>
             <div className="mb-3">
-              <label htmlFor="confirm_pin" className="block text-gray-600 mb-1">Confirm New PIN</label>
-              <Password id="confirm_pin" value={pinData.confirm_pin} onChange={(e) => setPinData({ ...pinData, confirm_pin: e.target.value })} toggleMask feedback={false} />
+              <label htmlFor="confirm_pin" className="block text-gray-600 font-medium">Confirm New PIN</label>
+              <Password 
+                id="confirm_pin" 
+                className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 shadow-sm"
+                value={pinData.confirm_pin} 
+                onChange={(e) => setPinData({ ...pinData, confirm_pin: e.target.value })} 
+                toggleMask 
+                feedback={false} 
+              />
             </div>
-            <Button label="Change PIN" icon="pi pi-save" className="p-button-success" type="submit" />
+            <div className="flex justify-end">
+              <Button label="Change PIN" icon="pi pi-save" className="p-button-success px-5 py-2 text-sm" type="submit" />
+            </div>
           </form>
         </TabPanel>
       </TabView>
