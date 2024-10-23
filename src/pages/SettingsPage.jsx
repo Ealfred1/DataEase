@@ -80,7 +80,8 @@ const SettingsPage = () => {
 
         {/* Change Password Tab */}
         <TabPanel header="Change Password" leftIcon="pi pi-lock" className="flex">
-          <form onSubmit={handlePasswordSubmit} className="space-y-5">
+          <form onSubmit={handlePasswordSubmit} className="space-y-5 w-full">
+          <div className="grid gap-4 w-full">
             <div className="grid gap-2">
               <Label htmlFor="old_password" className="small-1 text-gray font-semibold text-[16px]">Old Password</Label>
               <input 
@@ -114,15 +115,17 @@ const SettingsPage = () => {
             <div className="flex justify-end">
               <Button label="Change Password" icon="pi pi-save" className="btn-main" type="submit" />
             </div>
+          </div>
           </form>
         </TabPanel>
 
         {/* Change PIN Tab */}
         <TabPanel header="Change PIN" leftIcon="pi pi-key">
           <form onSubmit={handlePinSubmit} className="space-y-5">
+          <div className="grid gap-4 w-full">
             <div className="grid gap-2">
               <Label htmlFor="old_pin" className="small-1 text-gray font-semibold text-[16px]">Old PIN</Label>
-              <Password 
+              <input 
                 id="old_pin" 
                 className="task-input"
                 value={pinData.old_pin} 
@@ -133,7 +136,7 @@ const SettingsPage = () => {
             </div>
             <div className="grid gap-2">
               <Label htmlFor="new_pin" className="small-1 text-gray font-semibold text-[16px]">New PIN</Label>
-              <Password 
+              <input 
                 id="new_pin" 
                 className="task-input"
                 value={pinData.new_pin} 
@@ -144,7 +147,7 @@ const SettingsPage = () => {
             </div>
             <div className="grid gap-2">
               <Label htmlFor="confirm_pin" className="small-1 text-gray font-semibold text-[16px]">Confirm New PIN</Label>
-              <Password 
+              <input 
                 id="confirm_pin" 
                 className="task-input"
                 value={pinData.confirm_pin} 
@@ -156,6 +159,7 @@ const SettingsPage = () => {
             <div className="flex justify-end">
               <Button label="Change PIN" icon="pi pi-save" className="btn-main" type="submit" />
             </div>
+          </div>
           </form>
         </TabPanel>
       </TabView>
