@@ -40,9 +40,9 @@ const Hero = () => {
 	  }, []);
 
 	return (
-		<section className="relative pt-60 pb-40 max-lg:pt-52 max-lg:pb-36 max-md:pt-36 max-md:pb-32 nmb-[200rem] z-1">
+		<section className="relative pt-60 pb-40 max-lg:pt-52 max-lg:pb-36 max-md:pt-36 max-md:pb-32 nmb-[200rem] z-1 mt-8 sm:mt-0">
 		{/* Background 3D balls */} 
-        <div className="scale-[0.7]   lg:scale-[0.9] absolute inset-0 -z-10">
+        <div className="scale-[0.7]   lg:scale-[0.9] absolute inset-0 -z-10 mt-8 sm:mt-0">
           <div  
             ref={(el) => (ballRefs.current[0] = el)} 
             className="scale-[0.7] absolute top-8 left-12 w-[2.2rem] h-[2.2rem] bg-gradient-to-r from-beige to-gray rounded-full shadow-[0_4px_8px_rgba(0,0,0,0.3),_inset_0_0_10px_rgba(255,255,255,0.2)]">
@@ -59,7 +59,7 @@ const Hero = () => {
      
         </div>
 	      <Element name="hero">
-	        <div className="container">
+	        <div className="container -mt-28 sm:mt-0">
 	          <div className="relative z-2 max-w-512 max-lg:max-w-388">
 	            <div className="caption small-2 uppercase text-orangeYellow">
 	                   Simplifying VTU for Everyone
@@ -69,16 +69,24 @@ const Hero = () => {
 	                  VTU Made Easy
 
 	            </h1>
-	            <p className="max-w-440 mb-14 body-2 max-md:mb-10 text-gray">
+	            <p className="max-w-440 mb-14 body-2 max-md:mb-10 text-gray mt-32 sm:mt-0">
 				        DataEase provides quick and reliable VTU services, including airtime, data, and bill payments, for individuals and businesses.
 
 
 	            </p>
 	            <LinkScroll to="features" offset={-100} spy smooth>
-	              <button className="main-btn">
+				{/* <button className="main-btn block sm:hidden">
+  						Get Started
+				</button> */}
+				<div className=' justify-around w-19/20 flex '>
+				<button className="main-btn">
   						Get Started
 				</button>
 
+				<button className="w-full bg-white border-2 border-vibrantGreen ml-4 rounded-xl font-bold text-vibrantGreen">
+  						Login
+				</button>
+				</div>
 	            </LinkScroll>
 	          </div>
 
