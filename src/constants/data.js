@@ -59,8 +59,8 @@ export const sidebarNavItems = [
   },
   {
     name: "Cable Sub",
-    link: "/bills",
-    title: "Bills",
+    link: "/cable-sub",
+    title: "Cable Sub",
     icon: "pi pi-credit-card"
   },
   {
