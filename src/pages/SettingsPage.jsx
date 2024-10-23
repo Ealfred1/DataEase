@@ -39,7 +39,7 @@ const SettingsPage = () => {
 
   return (
     <div className="p-5 max-w-7xl mx-auto bg-vibrantGreen bg-opacity-10 border border-vibrantGreen border-opacity-50 rounded-md">
-      <h2 className="text-2xl font-semibold mb-5 text-gray-800">Settings</h2>
+      <h2 className="text-3xl leading-32 tracking-wide font-semibold mb-5 text-gray-800">Settings</h2>
       
       <TabView className="tab-view-custom w-full">
         {/* General Tab */}
@@ -62,6 +62,21 @@ const SettingsPage = () => {
                 value={generalInfo.last_name} 
                 onChange={(e) => setGeneralInfo({ ...generalInfo, last_name: e.target.value })} 
               />
+            </div>
+
+            <div className="grid gap-4">
+              <div className="grid gap-2">
+                <Label htmlFor="username" className="small-1 text-gray font-semibold text-[16px]">Email / Username</Label>
+                <input
+                  id="username"
+                  type="text"
+                  className="task-input"
+                  placeholder="email@example.com"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  required
+                />
+              </div>
             </div>
             <div className="flex justify-end">
               <Button label="Save Changes" icon="pi pi-save" className="p-button-success px-5 py-2 text-sm" type="submit" />

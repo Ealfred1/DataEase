@@ -671,18 +671,14 @@ transform: translateX(0);
 }
 
 .tab-view-custom .p-tabview-nav {
-  display: flex;
-  justify-content: flex-start; /* Align tabs to the left */
+  /* display: flex;
+  justify-content: flex-start; Align tabs to the left */
+  @apply flex items-center justify-start mb-16 w-full h-20 gap-32;
   
 }
 
 .tab-view-custom .p-tabview-nav .p-tabview-nav-link {
-  /* margin: 0 10px; Space between tabs */
-  @apply space-x-20;
-  padding: 10px 15px; /* Adjust padding for a button-like appearance */
-  border: 1px solid transparent; /* Default border */
-  border-radius: 4px; /* Round corners */
-  transition: background-color 0.3s, border-color 0.3s; /* Smooth transition */
+  @apply inline-flex h-14 animate-shimmer items-center justify-center rounded-lg space-x-6 border-none bg-[linear-gradient(110deg,#00c158,45%,#7ad67f,55%,#00c158)] bg-[length:200%_100%] px-14 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-50 w-52 text-sm  whitespace-nowrap hover:opacity-70;
 }
 
 .tab-view-custom .p-tabview-nav .p-tabview-nav-link.p-highlight {
