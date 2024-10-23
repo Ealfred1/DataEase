@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from 'react';
+import { createContext, useState, useEffect, useCallback } from 'react';
 import axiosInstance from '../api/axios';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -6,7 +6,7 @@ import Cookies from 'js-cookie';
 
 export const AuthContext = createContext();
 
-let access_token = null; // Store in memory
+let access_token = null; // Store access token in memory
 
 export const getAccess_token = () => access_token;
 
@@ -21,6 +21,9 @@ export const refreshAccessToken = async () => {
       return data.access;
     }
   } catch (error) {
+    access_token = null;
+    Cookies.remove('accessToken');
+    Cookies.remove('refreshToken');
     toast.error('Session expired. Please log in again.');
     return null;
   }
@@ -28,37 +31,50 @@ export const refreshAccessToken = async () => {
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [accessToken, setAccessToken] = useState(null); // Store token in memory
+  const [accessToken, setAccessToken] = useState(Cookies.get('accessToken') || null); // Initially from cookie or null
   const [otpSent, setOtpSent] = useState(false);
   const [otpVerified, setOtpVerified] = useState(false);
   const navigate = useNavigate();
 
-  // Check if access token exists or refresh it when the page loads
+  // Function to refresh token every 4 minutes
+  const scheduleTokenRefresh = useCallback(() => {
+    const refreshInterval = setInterval(async () => {
+      const newToken = await refreshAccessToken();
+      if (newToken) {
+        setAccessToken(newToken);
+      }
+    }, 4 * 60 * 1000); // Every 4 minutes
+
+    return () => clearInterval(refreshInterval);
+  }, []);
+
+  // Check login status and handle expired token at load
   useEffect(() => {
     const checkLoginStatus = async () => {
-      const storedAccessToken = Cookies.get('accessToken');
       const refreshToken = Cookies.get('refreshToken');
-      
-      if (storedAccessToken) {
-        // If we have a valid access token in cookies, set it in memory
-        setAccessToken(storedAccessToken);
-        access_token = storedAccessToken;
+      if (accessToken) {
+        // If access token exists, use it and set interval to refresh it before expiration
+        access_token = accessToken;
+        scheduleTokenRefresh();
       } else if (refreshToken) {
-        // If no valid access token but refresh token exists, refresh the access token
+        // If no access token but refresh token exists, refresh the access token immediately
         const newAccessToken = await refreshAccessToken();
         if (newAccessToken) {
           setAccessToken(newAccessToken);
           access_token = newAccessToken;
-          navigate('/dashboard'); // Automatically navigate to dashboard if refreshed
+          scheduleTokenRefresh(); // Start token refresh interval
+        } else {
+          // If token refresh fails, log out user
+          logout();
         }
       } else {
-        // // If no tokens, redirect to login
-        // navigate('/login');
+        // If no refresh token, log out
+        logout();
       }
     };
 
     checkLoginStatus();
-  }, []);
+  }, [accessToken, scheduleTokenRefresh]);
 
   // Register user
   const register = async (userData) => {
@@ -79,6 +95,7 @@ export const AuthProvider = ({ children }) => {
       setUser(response.data);
       setOtpVerified(true);
       toast.success('Verification Successful!');
+      navigate('/dashboard');
     } catch (error) {
       toast.error(error.response?.data?.error || 'OTP verification failed.');
     }
@@ -88,28 +105,29 @@ export const AuthProvider = ({ children }) => {
   const loginUser = async (username, password) => {
     try {
       const { data } = await axiosInstance.post('/users/auth/jwt/create/', { username, password });
+      console.log(data.access)
       setAccessToken(data.access);
       access_token = data.access; // Store in memory
       Cookies.set('accessToken', data.access); // Optionally store access token
       Cookies.set('refreshToken', data.refresh, { httpOnly: true, secure: true }); // Store refresh token in secure cookie
 
       toast.success('Login successful!');
+      scheduleTokenRefresh(); // Start token refresh interval after login
       navigate('/dashboard'); // Redirect after successful login
     } catch (error) {
       handleError(error);
-      console.log(error)
     }
   };
 
-    // Resend OTP
-    const resendOtp = async (email) => {
-      try {
-        await axiosInstance.post('/users/resend-otp/', { email });
-        toast.success('OTP resent to your email.');
-      } catch (error) {
-        toast.error(error.response?.data?.message || 'Failed to resend OTP.');
-      }
-    };
+  // Resend OTP
+  const resendOtp = async (email) => {
+    try {
+      await axiosInstance.post('/users/resend-otp/', { email });
+      toast.success('OTP resent to your email.');
+    } catch (error) {
+      toast.error(error.response?.data?.message || 'Failed to resend OTP.');
+    }
+  };
 
   // Log out user and clear tokens
   const logout = () => {
@@ -129,7 +147,7 @@ export const AuthProvider = ({ children }) => {
       toast.error(errors.email[0]);
     } else if (errors.username) {
       toast.error(errors.username[0]);
-    } else if (error.response.status == 401) {
+    } else if (error.response.status === 401) {
       toast.error(error.response.data.detail);
     }
   };

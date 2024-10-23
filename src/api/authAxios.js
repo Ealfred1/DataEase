@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { getAccess_token, refreshAccessToken } from '../context/AuthContext'; //Import the token getter and refresh function
+import { getAccess_token, refreshAccessToken } from '../context/AuthContext'; // Import token getter and refresh function
 
 const authAxios = axios.create({
   baseURL: 'https://vtu-h5yu.onrender.com/', // Your API base URL
@@ -11,7 +11,10 @@ const authAxios = axios.create({
 // Interceptor to include Bearer token for authenticated requests
 authAxios.interceptors.request.use(
   async (config) => {
-    const token = getAccess_token(); // Retrieve the token stored in memory
+    let token = getAccess_token(); // Retrieve the token stored in memory
+    if (!token) {
+      token = await refreshAccessToken(); // Refresh token if it's not available
+    }
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
@@ -24,29 +27,31 @@ authAxios.interceptors.request.use(
 
 // Interceptor to refresh token on 401 response (token expired)
 authAxios.interceptors.response.use(
-  (response) => response,
+  (response) => response, // Pass through if no error
   async (error) => {
     const originalRequest = error.config;
-    
-    // If we get a 401 error and the request has not been retried
-    if (error.response.status === 401 && !originalRequest._retry) {
+
+    // Handle 401 (Unauthorized) error
+    if (error.response && error.response.status === 401 && !originalRequest._retry) {
       originalRequest._retry = true;
+
       try {
-        // Attempt to refresh the access token
-        await refreshAccessToken(); 
-        
-        const newToken = getAccess_token(); // Get the new token after refresh
+        // Attempt to refresh the token
+        const newToken = await refreshAccessToken();
         if (newToken) {
-          axios.defaults.headers.common['Authorization'] = `Bearer ${newToken}`;
-          return authAxios(originalRequest); // Retry the original request
+          // Retry the original request with the new token
+          originalRequest.headers['Authorization'] = `Bearer ${newToken}`;
+          return authAxios(originalRequest);
         }
-      } catch (err) {
-        // If token refresh fails, log the user out or handle the error as needed
-        return Promise.reject(err);
+      } catch (refreshError) {
+        // If token refresh fails, logout or handle the error as needed
+        console.error('Token refresh failed:', refreshError);
+        return Promise.reject(refreshError);
       }
     }
 
-    return Promise.reject(error); // Reject other errors
+    // Reject other errors
+    return Promise.reject(error);
   }
 );
 
