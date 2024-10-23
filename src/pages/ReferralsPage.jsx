@@ -30,7 +30,7 @@ const ReferralsPage = () => {
                 <p className='text-center text-gray font-normal'>Invite a friend to signup and make a purchase</p>
                 <p className='text-center text-gray font-normal'>Earn ₦10 on every purchase</p>
             </div>
-            <div className='justify-center flex items-center w-full'>
+            <div className='justify-center flex items-center w-full max-w-3xl mx-auto'>
                 <div className='sm:w-full w-96 flex'>
                     <input
                         ref={inputRef}
@@ -48,7 +48,7 @@ const ReferralsPage = () => {
                 </div>
             </div>
             {copySuccess && <p className='text-center text-green-500'>{copySuccess}</p>}
-            <div className="flex justify-around items-center w-full p-6 bg-gray-100">
+            <div className="flex justify-around items-center w-full p-6 bg-gray-100 max-w-3xl mx-auto">
                 <div className="bg-green-500 h-14 w-14 p-4 rounded-full flex items-center justify-center">
                     <i className='bx bxl-facebook text-white text-3xl'></i>
                 </div>
