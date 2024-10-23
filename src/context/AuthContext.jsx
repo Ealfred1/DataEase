@@ -6,7 +6,7 @@ import Cookies from 'js-cookie';
 
 export const AuthContext = createContext();
 
-let access_token = null; // Store access token in memory
+let access_token = Cookies.get('accessToken') || null // Store access token in memory
 
 export const getAccess_token = () => access_token;
 
