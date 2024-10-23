@@ -69,7 +69,7 @@ const Hero = () => {
 	                  VTU Made Easy
 
 	            </h1>
-	            <p className="max-w-440 mb-14 body-2 max-md:mb-10 text-gray mt-32 sm:mt-0">
+	            <p className="max-w-440 mb-14 body-2 max-md:mb-10 text-zinc-700 mt-32 sm:mt-0">
 				        DataEase provides quick and reliable VTU services, including airtime, data, and bill payments, for individuals and businesses.
 
 
@@ -80,10 +80,10 @@ const Hero = () => {
 				</button> */}
 				<div className=' justify-around w-19/20 flex '>
 				<button className="main-btn">
-  						Get Started
+  						SignUp
 				</button>
 
-				<button className="w-full bg-white border-2 border-vibrantGreen ml-4 rounded-xl font-bold text-vibrantGreen">
+				<button className="w-4/5 bg-white border-2 border-vibrantGreen ml-4 rounded-xl font-bold text-vibrantGreen">
   						Login
 				</button>
 				</div>
