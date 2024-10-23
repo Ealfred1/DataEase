@@ -6,6 +6,8 @@ import DashboardPage from './DashboardPage'
 import SettingsPage from './SettingsPage'
 import ReferralsPage from './ReferralsPage'
 import AirtimePage from './AirtimePage'
+import AdminPage from './AdminPage'
+import DataPage from './DataPage'
 import APIPage from './APIPage'
 import BillsPage from './BillsPage'
 import BonusPage from './BonusPage'
@@ -19,6 +21,8 @@ import TransactionsPaymentPage from './TransactionsPaymentPage'
 import TransactionsPurchase from './TransactionsPurchase'
 
 export {
+	AdminPage,
+	DataPage,
 	LandingPage,
 	NotFound,
 	RegisterPage,

@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { Layout, RequireAuth, AuthLayout } from './components';
-import { LandingPage, LoginPage, RegisterPage, NotFound, DashboardPage, SettingsPage, ReferralsPage, AirtimePage, ElectricityPage, CablePage, DataPage, PricingPage, FaqPage, ContactPage, AdminPage, TransactionsPaymentPage, TransactionsPurchase, BillsPage, FundAccoutPage, BonusPage, APIPage } from './pages';
+import { LandingPage, LoginPage, RegisterPage, NotFound, DashboardPage, SettingsPage, ReferralsPage, AirtimePage, ElectricityPage, CablePage, DataPage, PricingPage, FaqsPage, ContactPage, AdminPage, TransactionsPaymentPage, TransactionsPurchase, BillsPage, FundAccoutPage, BonusPage, APIPage } from './pages';
 
 const App = () => {
   return (
@@ -33,7 +33,7 @@ const App = () => {
             <Route path="/profile/referrals" element={<ReferralsPage />} />
             <Route path="/settings" element={<SettingsPage />} />
             <Route path="/profile/api" element={<APIPage />} />
-            <Route path="/support/faqs" element={<FaqPage />} />
+            <Route path="/support/faqs" element={<FaqsPage />} />
             <Route path="/support/contact" element={<ContactPage />} />
             <Route path="/support/pricing" element={<PricingPage />} />
           </Route>
