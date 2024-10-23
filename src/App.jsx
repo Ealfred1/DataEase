@@ -25,7 +25,7 @@ const App = () => {
             <Route path="/airtime-sub" element={<AirtimePage />} />
             <Route path="/bills" element={<BillsPage />} />
             <Route path="/bills/electricity-sub" element={<ElectricityPage />} />
-            <Route path="/cable-sub" element={<CablePage />} />
+            <Route path="/cable-  sub" element={<CablePage />} />
             <Route path="/admin" element={<AdminPage />} />
             <Route path="/transactions/payment" element={<TransactionsPaymentPage />} />
             <Route path="/transactions/purchase-history" element={<TransactionsPurchase />} />

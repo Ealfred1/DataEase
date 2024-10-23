@@ -2,28 +2,31 @@ import { createContext, useState, useEffect, useCallback } from 'react';
 import axiosInstance from '../api/axios';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import Cookies from 'js-cookie';
 
 export const AuthContext = createContext();
 
-let access_token = Cookies.get('accessToken') || null // Store access token in memory
+let access_token = localStorage.getItem('accessToken') || null; // Store access token in memory
 
 export const getAccess_token = () => access_token;
 
 // Refresh access token using the refresh token
 export const refreshAccessToken = async () => {
+  console.log("called");
   try {
-    const refreshToken = Cookies.get('refreshToken');
+    const refreshToken = localStorage.getItem('refreshToken');
+    console.log(refreshToken);
     if (refreshToken) {
       const { data } = await axiosInstance.post('/users/auth/jwt/refresh/', { refresh: refreshToken });
       access_token = data.access; // Store the new access token in memory
-      Cookies.set('accessToken', data.access); // Optionally store it in a cookie for easy retrieval
+      console.log(data, access_token);
+      localStorage.setItem('accessToken', data.access); // Optionally store it in localStorage for easy retrieval
       return data.access;
     }
   } catch (error) {
+    console.log("refresherr", error);
     access_token = null;
-    Cookies.remove('accessToken');
-    Cookies.remove('refreshToken');
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
     toast.error('Session expired. Please log in again.');
     return null;
   }
@@ -31,17 +34,19 @@ export const refreshAccessToken = async () => {
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [accessToken, setAccessToken] = useState(Cookies.get('accessToken') || null); // Initially from cookie or null
+  const [accessToken, setAccessToken] = useState(localStorage.getItem('accessToken') || null); // Initially from localStorage or null
   const [otpSent, setOtpSent] = useState(false);
   const [otpVerified, setOtpVerified] = useState(false);
   const navigate = useNavigate();
 
   // Function to refresh token every 4 minutes
   const scheduleTokenRefresh = useCallback(() => {
+    console.log("scheduled");
     const refreshInterval = setInterval(async () => {
       const newToken = await refreshAccessToken();
       if (newToken) {
         setAccessToken(newToken);
+        console.log("new token", newToken);
       }
     }, 4 * 60 * 1000); // Every 4 minutes
 
@@ -51,15 +56,17 @@ export const AuthProvider = ({ children }) => {
   // Check login status and handle expired token at load
   useEffect(() => {
     const checkLoginStatus = async () => {
-      const refreshToken = Cookies.get('refreshToken');
+      const refreshToken = localStorage.getItem('refreshToken');
       if (accessToken) {
         // If access token exists, use it and set interval to refresh it before expiration
+        console.log("there is", accessToken);
         access_token = accessToken;
         scheduleTokenRefresh();
       } else if (refreshToken) {
         // If no access token but refresh token exists, refresh the access token immediately
         const newAccessToken = await refreshAccessToken();
         if (newAccessToken) {
+          console.log("new access", newAccessToken);
           setAccessToken(newAccessToken);
           access_token = newAccessToken;
           scheduleTokenRefresh(); // Start token refresh interval
@@ -105,11 +112,11 @@ export const AuthProvider = ({ children }) => {
   const loginUser = async (username, password) => {
     try {
       const { data } = await axiosInstance.post('/users/auth/jwt/create/', { username, password });
-      console.log(data.access)
+      console.log(data.access);
       setAccessToken(data.access);
       access_token = data.access; // Store in memory
-      Cookies.set('accessToken', data.access); // Optionally store access token
-      Cookies.set('refreshToken', data.refresh, { httpOnly: true, secure: true }); // Store refresh token in secure cookie
+      localStorage.setItem('accessToken', data.access); // Optionally store access token
+      localStorage.setItem('refreshToken', data.refresh); // Store refresh token in localStorage
 
       toast.success('Login successful!');
       scheduleTokenRefresh(); // Start token refresh interval after login
@@ -134,9 +141,9 @@ export const AuthProvider = ({ children }) => {
     setAccessToken(null);
     access_token = null;
     setUser(null);
-    Cookies.remove('accessToken');
-    Cookies.remove('refreshToken');
-    navigate('/login');
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
+    navigate('/');
     toast.success('Logged out successfully.');
   };
 
