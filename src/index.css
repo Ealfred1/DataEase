@@ -677,8 +677,8 @@ transform: translateX(0);
   
 }
 
-.tab-view-custom .p-tabview-nav .p-tabview-nav-link {
-  @apply inline-flex h-14 animate-shimmer items-center justify-center rounded-lg space-x-6 border-none bg-[linear-gradient(110deg,#00c158,45%,#7ad67f,55%,#00c158)] bg-[length:200%_100%] px-14 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-50 w-52 text-sm  whitespace-nowrap hover:opacity-70;
+.tab-view-custom .p-tabview-nav .p-tabview-nav-link, .btn-main {
+  @apply inline-flex h-14 animate-shimmer items-center justify-center rounded-lg space-x-3 border-none bg-[linear-gradient(110deg,#00c158,45%,#7ad67f,55%,#00c158)] bg-[length:200%_100%] px-14 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-50 w-52 text-sm  whitespace-nowrap hover:opacity-70;
 }
 
 .tab-view-custom .p-tabview-nav .p-tabview-nav-link.p-highlight {
