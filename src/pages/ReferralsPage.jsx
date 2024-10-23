@@ -1,6 +1,7 @@
 import React, { useRef, useState, useContext } from 'react';
 import frens from '../assets/frens.jpg';
 import { DashboardContext } from '@/context/DashboardContext';
+import 'boxicons/css/boxicons.min.css';
 
 const ReferralsPage = () => {
     const { user } = useContext(DashboardContext);
@@ -45,6 +46,21 @@ const ReferralsPage = () => {
                 </div>
             </div>
             {copySuccess && <p className='text-center text-green-500'>{copySuccess}</p>}
+            <div className="flex justify-around items-center w-full p-6 bg-gray-100">
+                <div className="bg-green-500 h-14 w-14 p-4 rounded-full flex items-center justify-center">
+                    <i className='bx bxl-facebook text-white text-3xl'></i>
+                </div>
+                <div className="bg-green-500 h-14 w-14 p-4 rounded-full flex items-center justify-center">
+                    <i className='bx bxl-twitter text-white text-3xl'></i>
+                </div>
+                <div className="bg-green-500 h-14 w-14 p-4 rounded-full flex items-center justify-center">
+                    <i className='bx bxl-instagram text-white text-3xl'></i>
+                </div>
+                <div className="bg-green-500 h-14 w-14 p-4 rounded-full flex items-center justify-center">
+                    <i className='bx bxl-linkedin text-white text-3xl'></i>
+                </div>
+            </div>
+            <p className='text-center text-gray font-normal'>Share to social platforms</p>
         </div>
     );
 };
