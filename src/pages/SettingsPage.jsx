@@ -39,7 +39,7 @@ const SettingsPage = () => {
   };
 
   return (
-    <div className="p-5 max-w-[75rem] mx-auto bg-vibrantGreen bg-opacity-[0.05] border border-vibrantGreen border-opacity-50 rounded-md">
+    <div className="p-5 max-w-[77rem] mx-auto bg-vibrantGreen bg-opacity-[0.05] border border-vibrantGreen border-opacity-50 rounded-md">
       <h2 className="text-3xl leading-32 tracking-wide font-semibold mb-5 text-gray-800">Settings</h2>
       
       <TabView className="tab-view-custom w-full">
