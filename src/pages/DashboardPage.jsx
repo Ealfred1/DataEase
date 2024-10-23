@@ -35,13 +35,13 @@ const DashboardPage = () => {
         <div className="w-[100%] md:w-[70%] h-auto lg:h-80 bg-vibrantGreen bg-opacity-10 border border-vibrantGreen border-opacity-50 rounded-2xl px-7 pt-4 pb-5 flex gap-2 flex-row justify-between relative">
           <div className="pt-5">
             <p className="text-neutral-700">Hello! 👋</p>
-            <h1 className="text-2xl sm:text-3xl font-semibold text-gray-700 mb-3">{user.first_name} {user.last_name}</h1>
+            <h1 className="text-2xl sm:text-3xl font-semibold text-gray-700 mb-3">{user?.first_name} {user?.last_name}</h1>
             <p className="text-gray-500 tracking-wide mb-3">Explore your dashboard</p>
             <div className="flex lg:hidden justify-between gap-2">
               <button className="inline-flex h-14 animate-shimmer items-center justify-center rounded-2xl border-none bg-[linear-gradient(110deg,#00c158,45%,#7ad67f,55%,#00c158)] bg-[length:200%_100%] px-14 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-50 w-52 text-sm whitespace-nowrap hover:opacity-70">Fund Wallet <i className="pi pi-wallet ml-2"></i></button>
             </div>
             <div className="hidden absolute bottom-5 lg:flex justify-between gap-2">
-              <button className="inlinegit-flex h-14 animate-shimmer items-center justify-center rounded-2xl border-none bg-[linear-gradient(110deg,#00c158,45%,#7ad67f,55%,#00c158)] bg-[length:200%_100%] px-14 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-50 w-52 text-sm  whitespace-nowrap hover:opacity-70">Fund Wallet <i className="pi pi-wallet ml-2"></i></button>
+              <button className="inline-flex h-14 animate-shimmer items-center justify-center rounded-2xl border-none bg-[linear-gradient(110deg,#00c158,45%,#7ad67f,55%,#00c158)] bg-[length:200%_100%] px-14 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-50 w-52 text-sm  whitespace-nowrap hover:opacity-70">Fund Wallet <i className="pi pi-wallet ml-2"></i></button>
               <button className="inline-flex h-14 animate-shimmer items-center justify-center rounded-2xl border border-vibrantGreen hover:bg-[linear-gradient(110deg,#00c158,45%,#7ad67f,55%,#00c158)] hover:text-white  bg-[length:200%_100%] px-14 font-medium text-black transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-50 w-52 whitespace-nowrap bg-transparent">Upgrade Account <i className="pi pi-arrow-up ml-2"></i></button>
             </div>
           </div>
@@ -49,7 +49,7 @@ const DashboardPage = () => {
           <div className="pt-10">
             <div className="space-y-1 mb-5">
               <p className="text-gray text-[12px] lg:text-[13px]">Main Balance</p>
-              <p className="font-semibold text-black  text-right text-opacity-90 text-lg sm:text-3xl"><span className="text-opacity-70 text-black whitespace-nowrap">₦</span> {user.balance}</p>
+              <p className="font-semibold text-black  text-right text-opacity-90 text-lg sm:text-3xl"><span className="text-opacity-70 text-black whitespace-nowrap">₦</span> {user?.balance}</p>
             </div>
             <div className="flex gap-2 flex-col text-right absolute bottom-5 right-5">
               <div className="">
