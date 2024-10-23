@@ -107,7 +107,7 @@ export const sidebarNavItems = [
   },
   {
     name: "Settings",
-    link: "/profile/settings",
+    link: "/settings",
     title: "Settings",
     icon: "pi pi-cog"
   },
