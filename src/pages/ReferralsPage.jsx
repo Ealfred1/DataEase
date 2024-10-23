@@ -2,6 +2,7 @@ import React, { useRef, useState, useContext } from 'react';
 import frens from '../assets/frens.jpg';
 import { DashboardContext } from '@/context/DashboardContext';
 import 'boxicons/css/boxicons.min.css';
+import { toast } from 'react-toastify';
 
 const ReferralsPage = () => {
     const { user } = useContext(DashboardContext);
@@ -12,7 +13,8 @@ const ReferralsPage = () => {
     const copyToClipboard = () => {
         const text = inputRef.current.value;
         navigator.clipboard.writeText(text).then(() => {
-            setCopySuccess('Copied!');
+            // setCopySuccess('Copied!');
+            toast.success('Copied!')
         }).catch(() => {
             setCopySuccess('Failed to copy!');
         });
