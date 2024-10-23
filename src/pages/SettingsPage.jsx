@@ -41,7 +41,7 @@ const SettingsPage = () => {
     <div className="p-5 max-w-7xl mx-auto bg-vibrantGreen bg-opacity-10 border border-vibrantGreen border-opacity-50 rounded-md">
       <h2 className="text-2xl font-semibold mb-5 text-gray-800">Settings</h2>
       
-      <TabView className="tab-view-custom">
+      <TabView className="tab-view-custom w-full">
         {/* General Tab */}
         <TabPanel header="General" leftIcon="pi pi-user flex">
           <form onSubmit={handleGeneralSubmit} className="space-y-5">

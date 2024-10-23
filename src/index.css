@@ -673,10 +673,12 @@ transform: translateX(0);
 .tab-view-custom .p-tabview-nav {
   display: flex;
   justify-content: flex-start; /* Align tabs to the left */
+  
 }
 
 .tab-view-custom .p-tabview-nav .p-tabview-nav-link {
-  margin: 0 10px; /* Space between tabs */
+  /* margin: 0 10px; Space between tabs */
+  @apply space-x-20;
   padding: 10px 15px; /* Adjust padding for a button-like appearance */
   border: 1px solid transparent; /* Default border */
   border-radius: 4px; /* Round corners */
