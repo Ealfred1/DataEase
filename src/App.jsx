@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom';
 import { Layout, RequireAuth, AuthLayout } from './components'
 import { LandingPage, LoginPage, RegisterPage, NotFound, DashboardPage, SettingsPage } from './pages'
+import ReferralsPage from './pages/ReferralsPage';
 
 const App = () => {
 
@@ -19,6 +20,7 @@ const App = () => {
           <Route element={<AuthLayout />}>
             <Route path='/dashboard' element={<DashboardPage />} />
             <Route path='/settings' element={<SettingsPage />} />
+            <Route path='/profile/referrals' element={<ReferralsPage/>} />
           </Route>
         </Route>
       </Routes>
