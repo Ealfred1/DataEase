@@ -1,8 +1,9 @@
-import React, { useRef, useState, useContext } from 'react';
+import React, { useRef, useState, useContext, useEffect } from 'react';
 import frens from '../assets/frens.jpg';
 import { DashboardContext } from '@/context/DashboardContext';
 import 'boxicons/css/boxicons.min.css';
 import { toast } from 'react-toastify';
+import authAxios from '@/api/authAxios';
 
 const ReferralsPage = () => {
     const { user } = useContext(DashboardContext);
@@ -20,8 +21,17 @@ const ReferralsPage = () => {
         });
     };
 
+    const [data, setData] = useState(null)
+
+    useEffect(() => {
+        authAxios.get('/pin/')
+        .then(res => setData(res.data), console.log(data))
+        .catch(console.error)
+    }, [])
+
     return (
         <div>
+            {/* {data ? JSON.stringify(data) : 'Loading...'} */}
             <div className='flex justify-center items-center'>
                 <img src={frens} className='w-640' alt="" />
             </div>
@@ -64,6 +74,7 @@ const ReferralsPage = () => {
             </div>
             <p className='text-center text-gray font-normal'>Share to social platforms</p>
         </div>
+
     );
 };
 

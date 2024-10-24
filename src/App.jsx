@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { Layout, RequireAuth, AuthLayout } from './components';
-import { LandingPage, LoginPage, RegisterPage, NotFound, DashboardPage, SettingsPage, ReferralsPage, AirtimePage, ElectricityPage, CablePage, DataPage, PricingPage, FaqsPage, ContactPage, AdminPage, TransactionsPaymentPage, TransactionsPurchase, BillsPage, FundAccoutPage, BonusPage, APIPage } from './pages';
+import { LandingPage, LoginPage, RegisterPage, NotFound, DashboardPage, SettingsPage, ReferralsPage, AirtimePage, ElectricityPage, CablePage, DataPage, PricingPage, FaqsPage, ContactPage, AdminPage, TransactionsPaymentPage, TransactionsPurchase, BillsPage, FundAccoutPage, BonusPage, APIPage, CreatVACC } from './pages';
 
 const App = () => {
   return (
@@ -36,6 +36,7 @@ const App = () => {
             <Route path="/support/faqs" element={<FaqsPage />} />
             <Route path="/support/contact" element={<ContactPage />} />
             <Route path="/support/pricing" element={<PricingPage />} />
+            <Route path='/virtual_account' element={<CreatVACC />} />
           </Route>
         </Route>
       </Routes>

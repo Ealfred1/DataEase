@@ -19,6 +19,7 @@ import FundAccoutPage from './FundAccoutPage'
 import PricingPage from './PricingPage'
 import TransactionsPaymentPage from './TransactionsPaymentPage'
 import TransactionsPurchase from './TransactionsPurchase'
+import CreatVACC from './CreatVACC'
 
 export {
 	AdminPage,
@@ -41,5 +42,6 @@ export {
 	FundAccoutPage,
 	PricingPage,
 	TransactionsPaymentPage,
-	TransactionsPurchase
+	TransactionsPurchase,
+	CreatVACC,
 }
