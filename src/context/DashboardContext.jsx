@@ -1,13 +1,14 @@
-import { createContext, useState, useEffect } from 'react';
+import { createContext, useState, useEffect, useContext } from 'react';
 import { toast } from 'react-toastify';
 import authAxios from '../api/authAxios'; // Updated axios instance
+import { AuthContext, refreshAccessToken } from './AuthContext'; // Import the AuthContext
 
 export const DashboardContext = createContext();
 
 export const DashboardProvider = ({ children }) => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")) || null);
-  const [token, setToken] = useState(localStorage.getItem("token"));
   const [loading, setLoading] = useState(true);
+  const { loginUser, accessToken } = useContext(AuthContext); // Access login function and token from AuthContext
 
 
   const fetchUserData = async () => {
@@ -17,7 +18,7 @@ export const DashboardProvider = ({ children }) => {
       localStorage.setItem('user', JSON.stringify(data)); // Store user data in local storage
     } catch (error) {
       if (error.response?.status === 401) {
-        // This will be handled by axios interceptor automatically
+        await refreshAccessToken()
         toast.error('Unauthorized. Please log in again.');
       } else {
         toast.error('Failed to fetch user data.');
@@ -29,8 +30,10 @@ export const DashboardProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    fetchUserData();
-  }, []);
+    if (accessToken) {
+      fetchUserData();
+    }
+  }, [accessToken]);
 
   return (
     <DashboardContext.Provider value={{ user, loading }}>
