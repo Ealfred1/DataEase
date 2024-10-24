@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'; // For navigation to settings pa
 import { DashboardContext } from '../context/DashboardContext';
 import Swal from 'sweetalert2'; // SweetAlert2 for modals
 import { TransactionSection } from '../components';
+import { Link } from 'react-router-dom';
 
 const DashboardPage = () => {
   const { user, loading } = useContext(DashboardContext);
@@ -38,10 +39,14 @@ const DashboardPage = () => {
             <h1 className="text-2xl sm:text-3xl font-semibold text-gray-700 mb-3">{user?.first_name} {user?.last_name}</h1>
             <p className="text-gray-500 tracking-wide mb-3">Explore your dashboard</p>
             <div className="flex lg:hidden justify-between gap-2">
+              <Link to='/fund'>
               <button className="inline-flex h-14 animate-shimmer items-center justify-center rounded-2xl border-none bg-[linear-gradient(110deg,#00c158,45%,#7ad67f,55%,#00c158)] bg-[length:200%_100%] px-14 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-50 w-52 text-sm whitespace-nowrap hover:opacity-70">Fund Wallet <i className="pi pi-wallet ml-2"></i></button>
+              </Link>
             </div>
             <div className="hidden absolute bottom-5 lg:flex justify-between gap-2">
+            <Link to='/fund'>
               <button className="inline-flex h-14 animate-shimmer items-center justify-center rounded-2xl border-none bg-[linear-gradient(110deg,#00c158,45%,#7ad67f,55%,#00c158)] bg-[length:200%_100%] px-14 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-50 w-52 text-sm  whitespace-nowrap hover:opacity-70">Fund Wallet <i className="pi pi-wallet ml-2"></i></button>
+            </Link>
               <button className="inline-flex h-14 animate-shimmer items-center justify-center rounded-2xl border border-vibrantGreen hover:bg-[linear-gradient(110deg,#00c158,45%,#7ad67f,55%,#00c158)] hover:text-white  bg-[length:200%_100%] px-14 font-medium text-black transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-50 w-52 whitespace-nowrap bg-transparent">Upgrade Account <i className="pi pi-arrow-up ml-2"></i></button>
             </div>
           </div>
@@ -78,20 +83,24 @@ const DashboardPage = () => {
             </div>
 
             {/* Wallet */}
+            <Link to='/fund'>
             <div className="flex flex-col items-center">
               <div className="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center mb-2">
                 <i className="pi pi-wallet text-green-500 text-xl"></i>
               </div>
               <p className="text-gray-800 text-sm">Wallet</p>
             </div>
+            </Link>
 
             {/* Airtime */}
+            
             <div className="flex flex-col items-center">
               <div className="w-12 h-12 bg-yellow-50 rounded-full flex items-center justify-center mb-2">
                 <i className="pi pi-mobile text-yellow-500 text-xl"></i>
               </div>
               <p className="text-gray-800 text-sm">Airtime</p>
             </div>
+          
 
             {/* Electricity */}
             <div className="flex flex-col items-center">
@@ -110,12 +119,14 @@ const DashboardPage = () => {
             </div>
 
             {/* Bills */}
+            <Link to='/cable-sub'>
             <div className="flex flex-col items-center">
               <div className="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center mb-2">
                 <i className="pi pi-money-bill text-red-500 text-xl"></i>
               </div>
               <p className="text-gray-800 text-sm">Cable</p>
             </div>
+            </Link>
           </div>
         </div>
       </div>

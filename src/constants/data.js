@@ -93,12 +93,12 @@ export const sidebarNavItems = [
     title: "Purchase History",
     icon: "pi pi-shopping-cart"
   },
-  {
-    name: "Bonus",
-    link: "/profile/bonus",
-    title: "Bonus",
-    icon: "pi pi-gift"
-  },
+  // {
+  //   name: "Bonus",
+  //   link: "/profile/bonus",
+  //   title: "Bonus",
+  //   icon: "pi pi-gift"
+  // },
   {
     name: "Referrals",
     link: "/profile/referrals",
